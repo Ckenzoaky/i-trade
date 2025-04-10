@@ -6,37 +6,36 @@ class Screen3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        //const Spacer(),
-        const SizedBox(height: 87),
+        SizedBox(height: size.height * 0.11),
         Image.asset(
           "assets/images/image2.png",
           fit: BoxFit.cover,
-          height: 500,
-          width: double.infinity,
+          height: size.height * 0.47,
+          width: size.width * 1,
         ),
-        const SizedBox(height: 10),
-        //        const Spacer(),
+        SizedBox(height: size.height * 0.03),
         Text(
           "Une plateforme simple et \naccessible",
           textAlign: TextAlign.center,
           style: GoogleFonts.asap(
-            fontSize: 20,
+            fontSize: size.width * 0.05,
             fontWeight: FontWeight.bold,
-            color: Colors.green,
+            color: Colors.deepPurple,
           ),
         ),
-        const SizedBox(height: 20),
+        SizedBox(height: size.height * 0.02),
         Container(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: EdgeInsets.symmetric(horizontal: size.width *0.08),
           child: Text(
             "Contactez facilement les vendeurs -- \ndiscutez ou appelez directement via \nWhatsApp pour finaliser l'affaire.",
             textAlign: TextAlign.center,
             style: GoogleFonts.asap(
-              fontSize: 15,
-              fontWeight: FontWeight.bold,
+              fontSize: size.width * 0.04,
+              fontWeight: FontWeight.w500,
               color: Colors.black54,
             ),
           ),

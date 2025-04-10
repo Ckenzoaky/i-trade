@@ -19,6 +19,9 @@ class _GetStartedPageState extends State<GetStartedPage> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final height = size.height;
+    final width = size.width;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -27,7 +30,7 @@ class _GetStartedPageState extends State<GetStartedPage> {
           child: Text(
             'I-Trade',
             style: GoogleFonts.asap(
-              fontSize: 24,
+              fontSize: width * 0.06,
               fontWeight: FontWeight.bold,
               color: Colors.white,
             ),
@@ -52,42 +55,48 @@ class _GetStartedPageState extends State<GetStartedPage> {
             ),
           ),
           //mise en place de la barre de navigation en base
-          Container(
-            alignment: const Alignment(0, 0.85),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                const SizedBox(),
-                //AFFICHAGE DU DEFILEMENT
-                //mise en place de la dependence smooth page indicator
-                SmoothPageIndicator(
-                  controller: pageController,
-                  count: 3,
-                  effect: const ExpandingDotsEffect(
-                    dotColor: Color.fromARGB(255, 146, 128, 197),
-                    activeDotColor: Colors.deepPurple,
-                    dotHeight: 7,
-                    dotWidth: 9,
-                    spacing: 10,
-                    expansionFactor: 3,
-                  ),
-                ),
-                GestureDetector(
-                  onTap:
-                      () => Navigator.pushReplacementNamed(
-                        context,
-                        '/scaffold_main',
-                      ),
-                  child: Text(
-                    buttonText,
-                    style: GoogleFonts.asap(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.deepPurple,
+          Positioned(
+            bottom: height * 0.05,
+            left: 0,
+            right: 0,
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: width * 0.1),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  const SizedBox(),
+                  //AFFICHAGE DU DEFILEMENT
+                  //mise en place de la dependence smooth page indicator
+                  SmoothPageIndicator(
+                    controller: pageController,
+                    count: 3,
+                    effect: const ExpandingDotsEffect(
+                      dotColor: Color.fromARGB(255, 146, 128, 197),
+                      activeDotColor: Colors.deepPurple,
+                      dotHeight: 7,
+                      dotWidth: 9,
+                      spacing: 10,
+                      expansionFactor: 2,
                     ),
                   ),
-                ),
-              ],
+                  //Boutton skip et Get Started
+                  GestureDetector(
+                    onTap:
+                        () => Navigator.pushReplacementNamed(
+                          context,
+                          '/scaffold_main',
+                        ),
+                    child: Text(
+                      buttonText,
+                      style: GoogleFonts.asap(
+                        fontSize: width * 0.045,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.deepPurple,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
