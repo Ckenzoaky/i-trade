@@ -71,7 +71,7 @@ class ShopPage extends StatelessWidget {
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: 15,
-          childAspectRatio: 0.61,
+          childAspectRatio: 0.63,
           mainAxisSpacing: 15,
         ),
         // APPELLE DE LA CLASS CATALOGCARD POUR AFFICHER LES ELEMENTS DANS LA GRILLE
@@ -79,7 +79,6 @@ class ShopPage extends StatelessWidget {
         children:
             demoData.map((item) => CatalogCard(catalogItem: item)).toList(),
       ),
-      
     );
   }
 }

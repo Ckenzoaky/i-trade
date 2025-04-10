@@ -12,7 +12,7 @@ class _MyImageSliderState extends State<MyImageSlider> {
   final myitems = [
     Image.asset("assets/images/xiaomi-12pro.png", fit: BoxFit.cover),
     Image.asset("assets/images/samsung1.png", fit: BoxFit.cover),
-    Image.asset("assets/images/xiaomi1.png", fit: BoxFit.cover),
+    Image.asset("assets/images/casquehyperx.png", fit: BoxFit.cover),
     Image.asset("assets/images/Samsung-Galaxy-S24.png", fit: BoxFit.cover),
     Image.asset("assets/images/iphone15rpomax.png", fit: BoxFit.cover),
   ];

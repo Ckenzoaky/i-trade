@@ -50,4 +50,16 @@ final List<MenuItemModel> demoData = [
     price: '270 000 FCFA',
     image: 'assets/images/tablette.png',
   ),
+  MenuItemModel(
+    name: 'Kenzo shop',
+    description: 'Google pixel 9 ...',
+    price: '300 000 FCFA',
+    image: 'assets/images/Google pixel 9.png',
+  ),
+  MenuItemModel(
+    name: 'Kenzo shop',
+    description: 'Tablette hybrid hp ...',
+    price: '270 000 FCFA',
+    image: 'assets/images/tablette.png',
+  ),
 ];

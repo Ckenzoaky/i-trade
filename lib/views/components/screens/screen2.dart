@@ -12,7 +12,7 @@ class Screen2 extends StatelessWidget {
         const SizedBox(height: 87),
         //const Spacer(),
         Image.asset(
-          "assets/images/image4.png",
+          "assets/images/phone1.png",
           fit: BoxFit.cover,
           height: 500,
           width: double.infinity,

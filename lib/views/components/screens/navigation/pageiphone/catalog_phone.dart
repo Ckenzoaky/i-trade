@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:i_trade/views/components/screens/menu_item_model.dart';
 
-class CatalogCard extends StatelessWidget {
-  const CatalogCard({super.key, required this.catalogItem});
+class CatalogIphone extends StatelessWidget {
+  const CatalogIphone({super.key, required this.catalogItem});
   //LA FONCTION POUR AFFICHER LES PRODUITS
   final MenuItemModel catalogItem;
 
@@ -34,6 +34,7 @@ class CatalogCard extends StatelessWidget {
                 child: Image.asset(catalogItem.image, fit: BoxFit.cover),
               ),
             ),
+            SizedBox(height: 5),
             //MISE EN PLACE DE CONTENEUR DU NOM DU VENDEUR
             //APPELLE DE LA CLASS IMAGE'CATALOGITEM.NAME'
             Container(
@@ -47,6 +48,7 @@ class CatalogCard extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(height: 5),
             //MISE EN PLACE DE CONTENEUR POUR LA DESCRIPTION DU PRODUITS
             //APPELLE DE LA CLASS IMAGE'CATALOGITEM.DESCRIPTION'
             Container(
@@ -60,7 +62,7 @@ class CatalogCard extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 20),
             //MISE EN PLACE DE CONTENEUR DU BOUTTON POUR AFFICHER LE PRIX
             //APPELLE DE LA CLASS IMAGE'CATALOGITEM.PRICE'
             //MISE EN PLACE DE GESTTION DE BOUTTON
