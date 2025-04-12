@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:i_trade/views/components/screens/menu_item_model.dart';
 
@@ -9,9 +10,6 @@ class CatalogCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    final width = size.width;
-    final height = size.height;
     //  final theme = Theme.of(context);
     return Card(
       //MISE EN PLACE DES CARACTERISTIQUES DE LA CARTE
@@ -20,83 +18,64 @@ class CatalogCard extends StatelessWidget {
       //WIGHT CLIP POUR ARRONDIR LE CONTENEUR DE LA CARTE
       clipBehavior: Clip.antiAlias,
       child: Container(
-        //MISE EN PLACE DE CONTENEUR
-        color: Colors.grey.shade200,
-        padding: EdgeInsets.symmetric(
-          horizontal: width * 0.04,
-          vertical: height * 0.015,
+        //Mise en place des bordures du conteneur.
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.grey.shade300, width: 2.w),
+          borderRadius: BorderRadius.circular(10.0),
+          color: Colors.grey.shade200,
         ),
+        //MISE EN PLACE DE CONTENEUR
+        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
         //AFFICHER LES PRODUITS LE RATION DE L'IMAGE DANS LE CONTENEUR
         //SELON LE RATION DE L'IMAGE ZOOM OU NON
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             AspectRatio(
-              aspectRatio: 9 / 10,
+              aspectRatio: 16 / 13,
               //MISE EN PLACE DE CONTENEUR DE L'IMAGE
               //APPELLE DE LA CLASS IMAGE'CATALOGITEM.IMAGE'
               //CLIPRRECT POUR ARRONDIR L'IMAGE
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(15.0),
+                borderRadius: BorderRadius.circular(10.0),
                 child: Image.asset(catalogItem.image, fit: BoxFit.cover),
               ),
             ),
-            SizedBox(height: height * 0.01),
+            SizedBox(height: 2.h),
             //MISE EN PLACE DE CONTENEUR DU NOM DU VENDEUR
             //APPELLE DE LA CLASS IMAGE'CATALOGITEM.NAME'
             Text(
               catalogItem.name,
-              style: GoogleFonts.mPlusRounded1c(
-                fontSize: width * 0.04,
+              style: GoogleFonts.lato(
+                fontSize: 13.w,
                 fontWeight: FontWeight.w500,
               ),
             ),
-            SizedBox(height: height * 0.01),
+            SizedBox(height: 3.h),
             //MISE EN PLACE DE CONTENEUR POUR LA DESCRIPTION DU PRODUITS
             //APPELLE DE LA CLASS IMAGE'CATALOGITEM.DESCRIPTION'
             Text(
               catalogItem.description,
-              style: GoogleFonts.oswald(
-                fontSize: width * 0.039,
-                fontWeight: FontWeight.w500,
+              style: GoogleFonts.lato(
+                fontSize: 11.w,
+                fontWeight: FontWeight.w900,
               ),
             ),
-            SizedBox(height: height * 0.021),
+            SizedBox(height: 5.h),
             //MISE EN PLACE DE CONTENEUR DU BOUTTON POUR AFFICHER LE PRIX
             //APPELLE DE LA CLASS IMAGE'CATALOGITEM.PRICE'
             //MISE EN PLACE DE GESTTION DE BOUTTON
             GestureDetector(
               onTap: () => Navigator.pushNamed(context, '/my_produit_profil'),
-              child: Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: width * 0.008,
-                  vertical: height * 0.005,
-                ),
-                margin: EdgeInsets.only(right: width * 0.025),
-                alignment: AlignmentDirectional.center,
-                decoration: BoxDecoration(
-                  color: Colors.deepPurple,
-                  borderRadius: BorderRadius.circular(50),
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Colors.grey,
-                      blurRadius: 2,
-                      offset: Offset(0, 3),
-                    ),
-                  ],
-                ),
-                //AFFICHER LE PRIX
-                child: Text(
-                  catalogItem.price,
-                  style: GoogleFonts.asap(
-                    fontSize: width * 0.04,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
+              child: Text(
+                catalogItem.price,
+                style: GoogleFonts.openSans(
+                  fontSize: 15.w,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.black,
                 ),
               ),
             ),
-            SizedBox(height: height * 0.01),
           ],
         ),
       ),
