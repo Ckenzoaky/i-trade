@@ -9,6 +9,9 @@ class CatalogCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final width = size.width;
+    final height = size.height;
     //  final theme = Theme.of(context);
     return Card(
       //MISE EN PLACE DES CARACTERISTIQUES DE LA CARTE
@@ -19,10 +22,14 @@ class CatalogCard extends StatelessWidget {
       child: Container(
         //MISE EN PLACE DE CONTENEUR
         color: Colors.grey.shade200,
-        padding: EdgeInsets.fromLTRB(15, 10, 15, 10),
+        padding: EdgeInsets.symmetric(
+          horizontal: width * 0.04,
+          vertical: height * 0.015,
+        ),
         //AFFICHER LES PRODUITS LE RATION DE L'IMAGE DANS LE CONTENEUR
         //SELON LE RATION DE L'IMAGE ZOOM OU NON
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             AspectRatio(
               aspectRatio: 9 / 10,
@@ -34,42 +41,39 @@ class CatalogCard extends StatelessWidget {
                 child: Image.asset(catalogItem.image, fit: BoxFit.cover),
               ),
             ),
+            SizedBox(height: height * 0.01),
             //MISE EN PLACE DE CONTENEUR DU NOM DU VENDEUR
             //APPELLE DE LA CLASS IMAGE'CATALOGITEM.NAME'
-            Container(
-              margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
-              alignment: AlignmentDirectional.topStart,
-              child: Text(
-                catalogItem.name,
-                style: GoogleFonts.mPlusRounded1c(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
-                ),
+            Text(
+              catalogItem.name,
+              style: GoogleFonts.mPlusRounded1c(
+                fontSize: width * 0.04,
+                fontWeight: FontWeight.w500,
               ),
             ),
+            SizedBox(height: height * 0.01),
             //MISE EN PLACE DE CONTENEUR POUR LA DESCRIPTION DU PRODUITS
             //APPELLE DE LA CLASS IMAGE'CATALOGITEM.DESCRIPTION'
-            Container(
-              margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
-              alignment: AlignmentDirectional.topStart,
-              child: Text(
-                catalogItem.description,
-                style: GoogleFonts.oswald(
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold,
-                ),
+            Text(
+              catalogItem.description,
+              style: GoogleFonts.oswald(
+                fontSize: width * 0.039,
+                fontWeight: FontWeight.w500,
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: height * 0.021),
             //MISE EN PLACE DE CONTENEUR DU BOUTTON POUR AFFICHER LE PRIX
             //APPELLE DE LA CLASS IMAGE'CATALOGITEM.PRICE'
             //MISE EN PLACE DE GESTTION DE BOUTTON
             GestureDetector(
               onTap: () => Navigator.pushNamed(context, '/my_produit_profil'),
               child: Container(
-                padding: EdgeInsets.all(4),
-                margin: EdgeInsets.fromLTRB(10, 0, 39, 0),
-                alignment: AlignmentDirectional.topCenter,
+                padding: EdgeInsets.symmetric(
+                  horizontal: width * 0.008,
+                  vertical: height * 0.005,
+                ),
+                margin: EdgeInsets.only(right: width * 0.025),
+                alignment: AlignmentDirectional.center,
                 decoration: BoxDecoration(
                   color: Colors.deepPurple,
                   borderRadius: BorderRadius.circular(50),
@@ -85,14 +89,14 @@ class CatalogCard extends StatelessWidget {
                 child: Text(
                   catalogItem.price,
                   style: GoogleFonts.asap(
-                    fontSize: 16,
+                    fontSize: width * 0.04,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
                 ),
               ),
             ),
-            SizedBox(height: 8),
+            SizedBox(height: height * 0.01),
           ],
         ),
       ),

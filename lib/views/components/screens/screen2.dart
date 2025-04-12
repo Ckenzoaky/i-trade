@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Screen2 extends StatelessWidget {
@@ -6,42 +7,45 @@ class Screen2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SizedBox(height: size.height * 0.11),
+        //Espace entre le haut de l'ecran et l'image
+        SizedBox(height: 45.h),
+        //Mise en page de l'image et les modifications
         Image.asset(
           "assets/images/phone1.png",
           fit: BoxFit.cover,
-          height: size.height *0.47,
-          width: size.width * 1,
+          height: 320.h,
+          width: 360.w,
         ),
-        SizedBox(height: size.height * 0.03),
-        //        const Spacer(),
+        //Espace entre l'image et le texte
+        SizedBox(height: 10.h),
+        //Mise en page du texte
         Text(
           "Trouvez votre bonheur!",
-          //          textAlign: TextAlign.center,
           style: GoogleFonts.asap(
-            fontSize: size.width * 0.05,
-            fontWeight: FontWeight.bold,
+            fontSize: 18.w,
+            fontWeight: FontWeight.w700,
             color: Colors.deepPurple,
           ),
         ),
-        SizedBox(height: size.height *0.02),
+        //Espace entre le texte et le paragraphe
+        SizedBox(height: 10.h),
+        //Mise en page du paragraphe
         Container(
-          padding: EdgeInsets.symmetric(horizontal: size.width * 0.08),
+          padding: EdgeInsets.symmetric(horizontal: 10.w),
           child: Text(
             "Parcourez notre large selection d'appareils \nmis en troc ou en achat a moindre cout !",
             textAlign: TextAlign.center,
             style: GoogleFonts.asap(
-              fontSize: size.width *0.04,
-              fontWeight: FontWeight.w500,
+              fontSize: 14.w,
+              fontWeight: FontWeight.w600,
               color: Colors.black54,
             ),
           ),
         ),
-        const Spacer(),
+        Spacer(),
       ],
     );
   }
