@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:i_trade/controllers/callpage.dart';
 import 'package:i_trade/controllers/my_produit_profil.dart';
 import 'package:i_trade/controllers/scaffold_main.dart';
+import 'package:i_trade/controllers/whatsapppage.dart';
 import 'package:i_trade/views/pages/get_started_page.dart';
 
 void main() {
@@ -25,6 +27,8 @@ class MyApp extends StatelessWidget {
           routes: {
             '/scaffold_main': (context) => ScaffoldMain(),
             '/my_produit_profil': (context) => MyProduitProfil(),
+            '/whatsapp_page': (context) => WhatsappPage(),
+            '/call_page': (context) => CallPage(),
           },
         );
       },

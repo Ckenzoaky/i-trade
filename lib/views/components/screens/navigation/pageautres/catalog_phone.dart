@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:i_trade/views/components/screens/menu_item_model.dart';
 
-class CatalogCard extends StatelessWidget {
-  const CatalogCard({super.key, required this.catalogItem});
+class CatalogAutres extends StatelessWidget {
+  const CatalogAutres({super.key, required this.catalogItem});
   //LA FONCTION POUR AFFICHER LES PRODUITS
   final MenuItemModel catalogItem;
 
@@ -20,7 +20,6 @@ class CatalogCard extends StatelessWidget {
       child: GestureDetector(
         onTap: () => Navigator.pushNamed(context, '/my_produit_profil'),
         child: Container(
-          //Mise en place des bordures du conteneur.
           decoration: BoxDecoration(
             border: Border.all(color: Colors.grey.shade300, width: 2.w),
             borderRadius: BorderRadius.circular(10.0),
@@ -59,7 +58,7 @@ class CatalogCard extends StatelessWidget {
               Text(
                 catalogItem.description,
                 style: GoogleFonts.lato(
-                  fontSize: 11.w,
+                  fontSize: 12.w,
                   fontWeight: FontWeight.w900,
                 ),
               ),
@@ -72,7 +71,7 @@ class CatalogCard extends StatelessWidget {
                 style: GoogleFonts.openSans(
                   fontSize: 15.w,
                   fontWeight: FontWeight.w700,
-                  color: Colors.black,
+                  color: Colors.green,
                 ),
               ),
             ],
