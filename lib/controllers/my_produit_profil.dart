@@ -5,10 +5,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:i_trade/views/components/button/my_elevated_button.dart';
 import 'package:i_trade/views/components/screens/navigation/pageautres/catalog_phone.dart';
 import 'package:i_trade/views/components/screens/navigation/pageautres/demo_data.dart';
-import 'package:i_trade/views/components/screens/pagedetailsproduits/sliderdetailsproduis/silder_produits.dart';
+import 'package:i_trade/views/components/screens/pagedetailsproduits/detailsproduits/list_product_page.dart';
 
 class MyProduitProfil extends StatefulWidget {
-  const MyProduitProfil({super.key});
+  final Product product;
+  const MyProduitProfil({super.key, required this.product});
 
   @override
   State<MyProduitProfil> createState() => _MyProduitProfilState();
@@ -38,31 +39,48 @@ class _MyProduitProfilState extends State<MyProduitProfil> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 200.h,
+              height: 170.h,
               child: PageView(
                 controller: _pageController,
-                children: [MyProduitSlider()],
+                children: [
+                  Image.asset(widget.product.image),
+                  Image.asset(widget.product.image),
+                  Image.asset(widget.product.image),
+                ],
               ),
             ),
             SizedBox(height: 10.h),
             //Mise en page du texte derniers produits
-            Padding(
-              padding: EdgeInsets.only(left: 10.w),
-              child: Text(
-                'KENZO SHOP',
-                style: GoogleFonts.oswald(
-                  fontSize: 16.w,
-                  fontWeight: FontWeight.w300,
-                  color: Colors.black54,
+            Row(
+              children: [
+                Container(
+                  padding: EdgeInsets.only(left: 10.h),
+                  child: Text(
+                    widget.product.name,
+                    style: GoogleFonts.oswald(
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black54,
+                    ),
+                  ),
                 ),
-              ),
+                SizedBox(width: 2.w),
+                Container(
+                  padding: EdgeInsets.only(top: 2.h),
+                  child: Icon(
+                    Icons.shopping_bag,
+                    color: Colors.black54,
+                    size: 12.w,
+                  ),
+                ),
+              ],
             ),
-            SizedBox(height: 15.h),
+            SizedBox(height: 5.h),
             //Mise en page du texte derniers produits
             Padding(
               padding: EdgeInsets.only(left: 10.w),
               child: Text(
-                'Playstation 5 Pro',
+                widget.product.description,
                 style: GoogleFonts.lato(
                   fontSize: 17.w,
                   fontWeight: FontWeight.w800,
@@ -70,6 +88,7 @@ class _MyProduitProfilState extends State<MyProduitProfil> {
                 ),
               ),
             ),
+            //Mise en page du texte derniers produits
             SizedBox(height: 10.h),
             //Ajout des boutons
             Padding(
@@ -119,9 +138,9 @@ class _MyProduitProfilState extends State<MyProduitProfil> {
             Padding(
               padding: EdgeInsets.only(left: 10.w),
               child: Text(
-                'Casque hyper x pour ordinateur, mobile et console \nVersion 2024',
+                widget.product.detailsproduits,
                 style: GoogleFonts.oswald(
-                  fontSize: 16.w,
+                  fontSize: 14.w,
                   fontWeight: FontWeight.w300,
                   color: Colors.black54,
                 ),
@@ -243,7 +262,7 @@ class _MyProduitProfilState extends State<MyProduitProfil> {
                       () => Navigator.pushNamed(context, '/whatsapp_page'),
                   //icon: Icon(Icons.bus),
                   label: Text(
-                    "Discuter : 350 000 FCFA",
+                    'Discuter : ${widget.product.price}',
                     style: TextStyle(color: Colors.white, fontSize: 16.w),
                   ),
                   style: ElevatedButton.styleFrom(
@@ -261,18 +280,20 @@ class _MyProduitProfilState extends State<MyProduitProfil> {
               child: Container(
                 margin: EdgeInsets.fromLTRB(0.h, 2.h, 0.h, 30.h),
                 height: 40.h,
-                width: 60.w,
-                child: ElevatedButton.icon(
+                width: 200.w,
+                child: ElevatedButton(
                   onPressed: () => Navigator.pushNamed(context, '/call_page'),
-                  icon: Icon(Icons.call, color: Colors.white, size: 25.w),
-                  label: Text(""),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.deepPurple,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15),
                     ),
-                    //padding: EdgeInsets.symmetric(vertical: 12),
+                    padding: EdgeInsets.zero,
                   ),
+                  child: Center(
+                    child: Icon(Icons.call, color: Colors.white, size: 25.w),
+                  ),
+                  //padding: EdgeInsets.symmetric(vertical: 12),
                 ),
               ),
             ),

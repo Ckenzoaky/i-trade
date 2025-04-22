@@ -1,9 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:i_trade/views/components/screens/pagedetailsproduits/detailsproduits/list_product_page.dart';
 
 class MyProduitSlider extends StatefulWidget {
-  const MyProduitSlider({super.key});
+  const MyProduitSlider(String image, {super.key, required Product product});
 
   @override
   State<MyProduitSlider> createState() => _MyProduitSliderState();
@@ -18,7 +19,7 @@ class _MyProduitSliderState extends State<MyProduitSlider> {
 
   int myCurrentIndex1 = 0;
   //  ClipRRect buildmyitems(int myCurrentIndex1) =>
-  //      ClipRRect(borderRadius: BorderRadius.circular(50));
+  //  ClipRRect(borderRadius: BorderRadius.circular(50));
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class _MyProduitSliderState extends State<MyProduitSlider> {
           children: [
             CarouselSlider(
               options: CarouselOptions(
-                //autoPlay: true,
+                autoPlay: true,
                 height: 200.h,
                 autoPlayCurve: Curves.fastOutSlowIn,
                 autoPlayAnimationDuration: const Duration(seconds: 2),

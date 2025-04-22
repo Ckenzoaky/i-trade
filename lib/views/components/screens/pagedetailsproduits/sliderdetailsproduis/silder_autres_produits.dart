@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AutresProduitSlider extends StatefulWidget {
-  const AutresProduitSlider({super.key});
+  const AutresProduitSlider(String image, {super.key});
 
   @override
   State<AutresProduitSlider> createState() => _AutresProduitSliderState();
@@ -29,7 +29,7 @@ class _AutresProduitSliderState extends State<AutresProduitSlider> {
             CarouselSlider(
               options: CarouselOptions(
                 autoPlay: true,
-                height: 150.h,
+                height: 250.h,
                 autoPlayCurve: Curves.fastOutSlowIn,
                 autoPlayAnimationDuration: const Duration(seconds: 2),
                 autoPlayInterval: const Duration(seconds: 2),
