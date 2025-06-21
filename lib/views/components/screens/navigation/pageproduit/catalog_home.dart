@@ -51,7 +51,7 @@ class CatalogHome extends StatelessWidget {
                 //APPELLE DE LA CLASS IMAGE'CATALOGITEM.IMAGE'
                 //CLIPRRECT POUR ARRONDIR L'IMAGE
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(10.0),
+                  borderRadius: BorderRadius.circular(10.0.r),
                   child: Image.asset(catalogItem.image, fit: BoxFit.cover),
                 ),
               ),

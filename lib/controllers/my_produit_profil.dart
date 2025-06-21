@@ -82,7 +82,7 @@ class _MyProduitProfilState extends State<MyProduitProfil> {
               child: Text(
                 widget.product.description,
                 style: GoogleFonts.lato(
-                  fontSize: 17.w,
+                  fontSize: 17.sp,
                   fontWeight: FontWeight.w800,
                   color: Colors.black,
                 ),
@@ -196,14 +196,14 @@ class _MyProduitProfilState extends State<MyProduitProfil> {
                     crossAxisCount: 1,
                     crossAxisSpacing: 15.w,
                     mainAxisSpacing: 15.h,
-                    childAspectRatio: 1.1.w,
+                    childAspectRatio: 1.17.w,
                   ),
                   // APPELLE DE LA CLASS CATALOGCARD POUR AFFICHER LES ELEMENTS DANS LA GRILLE
                   // POUR MODIFIER LES ELEMENTS DANS LA GRILLE, ON VA CHANGER LES PARAMETRES DANS DEMO_DATA, CATALOG_CARD ET MENU_ITEM
-                  itemCount: demoData6.length,
+                  itemCount: demoData9.length,
                   itemBuilder:
                       (context, index) =>
-                          CatalogAutres(catalogItem: demoData6[index]),
+                          CatalogAutres(catalogItem: demoData9[index]),
                 ),
               ),
             ),

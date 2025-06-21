@@ -6,10 +6,9 @@ final List<MenuItemModel> demoData = [
   MenuItemModel(
     name: 'NAG shop',
     description: 'Playstation 5 ...',
-    detailsproduits:
-        'Playstation 5 (PS4) Pro + 1 manette. n\ Version 12.00 ...',
+    detailsproduits:'Playstation 5 (PS4) Pro + 1 manette. n\ Version 12.00 ...',
     price: '350 000 FCFA',
-    image: 'assets/images/iphone 13 pro Max.png',
+    image: 'assets/images/playstation5.png',
   ),
   MenuItemModel(
     name: 'Guy store',
@@ -44,7 +43,7 @@ final List<MenuItemModel> demoData = [
     description: 'Xiaomi A3 ...',
     detailsproduits: 'Iphone 13 pro ...',
     price: '30 000 FCFA',
-    image: 'assets/images/xaoimia3.png',
+    image: 'assets/images/tablette.png',
   ),
   MenuItemModel(
     name: 'Kenzo shop',

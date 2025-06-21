@@ -23,7 +23,7 @@ class CatalogCard extends StatelessWidget {
           //Mise en place des bordures du conteneur.
           decoration: BoxDecoration(
             border: Border.all(color: Colors.grey.shade300, width: 2.w),
-            borderRadius: BorderRadius.circular(10.0),
+            borderRadius: BorderRadius.circular(10.0.r),
             color: Colors.grey.shade200,
           ),
           //MISE EN PLACE DE CONTENEUR
@@ -49,7 +49,7 @@ class CatalogCard extends StatelessWidget {
               Text(
                 catalogItem.name,
                 style: GoogleFonts.lato(
-                  fontSize: 13.w,
+                  fontSize: 13.sp,
                   fontWeight: FontWeight.w500,
                 ),
               ),

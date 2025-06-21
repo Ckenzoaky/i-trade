@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyImageSlider extends StatefulWidget {
   const MyImageSlider({super.key});
@@ -49,7 +50,7 @@ class _MyImageSliderState extends State<MyImageSlider> {
                   myitems
                       .map(
                         (item) => ClipRRect(
-                          borderRadius: BorderRadius.circular(15.0),
+                          borderRadius: BorderRadius.circular(15.0.r),
                           child: Container(child: item),
                         ),
                       )

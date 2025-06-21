@@ -23,14 +23,17 @@ class MyApp extends StatelessWidget {
       builder: (_, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple), useMaterial3: true),
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+            useMaterial3: true,
+          ),
           home: GetStartedPage(),
           routes: {
             '/scaffold_main': (context) => ScaffoldMain(),
             '/my_produit_profil': (context) {
-              final product =
-                  ModalRoute.of(context)!.settings.arguments as Product;
-              return MyProduitProfil(product: product);
+              return MyProduitProfil(
+                product: ModalRoute.of(context)!.settings.arguments as Product,
+              );
             },
             '/whatsapp_page': (context) => WhatsappPage(),
             '/call_page': (context) => CallPage(),
