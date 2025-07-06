@@ -37,6 +37,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffF5F6F9),
       //Mise en place du conteneur des boutons et du appbar
       appBar: AppBar(
         actionsPadding: EdgeInsets.fromLTRB(0.h, 5.h, 0.h, 10.h),
@@ -50,7 +51,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         //Ajout des boutons et mise en place des icones
-        backgroundColor: Colors.white,
+        backgroundColor: Color(0xffF5F6F9),
         actions: [
           //Ajout de l'icone d'exclamation et du bouton
           IconButton(

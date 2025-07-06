@@ -22,6 +22,9 @@ class _ScaffoldMainState extends State<ScaffoldMain> {
     return Scaffold(
       body: _pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.grey.shade300,
+        selectedItemColor: Colors.deepPurple,
+        unselectedItemColor: Colors.black,
         onTap: (value) {
           setState(() {
             _currentIndex = value;
@@ -30,7 +33,7 @@ class _ScaffoldMainState extends State<ScaffoldMain> {
         currentIndex: _currentIndex,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home, color: Colors.black, size: 40),
+            icon: Icon(Icons.home, color: Colors.black, size: 30),
             activeIcon: FaIcon(
               FontAwesomeIcons.check,
               color: Colors.deepPurple,
@@ -39,7 +42,7 @@ class _ScaffoldMainState extends State<ScaffoldMain> {
             label: 'Vitrine',
           ),
           BottomNavigationBarItem(
-            icon: FaIcon(FontAwesomeIcons.store, color: Colors.black, size: 35),
+            icon: FaIcon(FontAwesomeIcons.store, color: Colors.black, size: 30),
             label: 'Store',
             activeIcon: FaIcon(
               FontAwesomeIcons.check,
