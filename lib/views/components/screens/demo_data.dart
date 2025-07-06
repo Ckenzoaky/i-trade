@@ -6,7 +6,7 @@ final List<MenuItemModel> demoData = [
   MenuItemModel(
     name: 'NAG shop',
     description: 'Playstation 5 ...',
-    detailsproduits:'Playstation 5 (PS4) Pro + 1 manette. n\ Version 12.00 ...',
+    detailsproduits:'Playstation 5 (PS4) Pro + 1 manette. \nVersion 12.00 ...',
     price: '350 000 FCFA',
     image: 'assets/images/playstation5.png',
   ),

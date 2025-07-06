@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:i_trade/views/components/screens/menu_item_model.dart';
+import 'package:i_trade/views/components/screens/pagedetailsproduits/detailsproduits/list_product_page.dart';
 
 class CatalogCard extends StatelessWidget {
   const CatalogCard({super.key, required this.catalogItem});
@@ -18,7 +19,14 @@ class CatalogCard extends StatelessWidget {
       //WIGHT CLIP POUR ARRONDIR LE CONTENEUR DE LA CARTE
       clipBehavior: Clip.antiAlias,
       child: GestureDetector(
-        onTap: () => Navigator.pushNamed(context, '/my_produit_profil'),
+        onTap: () => Navigator.pushNamed(context, '/my_produit_profil',
+        arguments: Product(
+                name: catalogItem.name,
+                image: catalogItem.image,
+                description: catalogItem.description,
+                detailsproduits: catalogItem.detailsproduits,
+                price: catalogItem.price,
+              ),),
         child: Container(
           //Mise en place des bordures du conteneur.
           decoration: BoxDecoration(
@@ -59,7 +67,7 @@ class CatalogCard extends StatelessWidget {
               Text(
                 catalogItem.description,
                 style: GoogleFonts.lato(
-                  fontSize: 11.w,
+                  fontSize: 12.sp,
                   fontWeight: FontWeight.w900,
                 ),
               ),

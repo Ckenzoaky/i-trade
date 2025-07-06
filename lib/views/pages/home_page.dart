@@ -154,7 +154,7 @@ class _HomePageState extends State<HomePage> {
                   child: Text(
                     'Decouvrez des deals en or !!!',
                     style: GoogleFonts.oswald(
-                      fontSize: 25.w,
+                      fontSize: 25.sp,
                       fontWeight: FontWeight.w500,
                       color: Colors.white,
                     ),
