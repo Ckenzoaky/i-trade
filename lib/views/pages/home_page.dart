@@ -37,43 +37,77 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffF5F6F9),
       //Mise en place du conteneur des boutons et du appbar
       appBar: AppBar(
-        actionsPadding: EdgeInsets.fromLTRB(0.h, 5.h, 0.h, 10.h),
+        actionsPadding: EdgeInsets.fromLTRB(0.w, 5.h, 0.w, 10.h),
         //Creation des boutons de navigation au top
-        title: Text(
-          'I-Trade',
-          style: GoogleFonts.asap(
-            fontSize: 22.w,
-            fontWeight: FontWeight.w700,
-            color: Colors.black,
+        title: Padding(
+          padding: EdgeInsets.only(left: 5.w),
+          child: GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, '/admin_page');
+              // Action lors du tap sur le titre
+            },
+            //mise en place du texte I-Trade
+            child: Text(
+              'iTrade',
+              style: GoogleFonts.anton(
+                fontSize: 24.w,
+                fontWeight: FontWeight.w500,
+                color: Theme.of(context).colorScheme.primary,
+              ),
+            ),
           ),
         ),
         //Ajout des boutons et mise en place des icones
-        backgroundColor: Color(0xffF5F6F9),
         actions: [
           //Ajout de l'icone d'exclamation et du bouton
-          IconButton(
-            icon: FaIcon(
-              FontAwesomeIcons.circleExclamation,
-              size: 21.h,
-              color: Colors.black87,
+          Padding(
+            padding: EdgeInsets.only(right: 5.w),
+            child: IconButton(
+              icon: FaIcon(
+                FontAwesomeIcons.circleExclamation,
+                size: 22.h,
+                color: Theme.of(context).colorScheme.secondary,
+              ),
+              onPressed: () {
+                showModalBottomSheet(
+                  isScrollControlled: true,
+                  context: context,
+                  builder: (context) {
+                    return Container(
+                      width: double.infinity,
+                      height: 480.h,
+                      color: Colors.white,
+                      padding: EdgeInsets.only(top: 22.h, left: 15.w),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Avis de non responsabilité :',
+                            style: GoogleFonts.anton(
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.red,
+                            ),
+                          ),
+                          SizedBox(height: 25.h),
+                          Text(
+                            "iTrade agit en tant que plateforme de mise en \nrelation pour faciliter les échanges et les achats \nentre utilisateurs. \nNous ne garantissons pas la qualité, le bon \nfonctionnement ou l'authenticité des appareils \néchangés ou vendus sur la plateforme. \n\nIl est de la responsabilité de chaque utilisateur de \nvérifier soigneusement l'état des produits avant de \nconclure une transaction. \niTrade décline toute responsabilité en cas de \ndéfaillance, de dommage ou de dysfonctionnement \ndes appareils échangés ou achetés vie l'application. \n\nSoyez vigilant et n'hésitez pas à poser des \nquestions et à tester les appareils avant d'acheter \nou d'effectuer un échange.",
+                            style: GoogleFonts.oswald(
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.black54,
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                );
+                // Ajoutez ici la logique de recherche
+              },
             ),
-            onPressed: () {
-              // Ajoutez ici la logique de recherche
-            },
-          ),
-          //Ajout de l'icone profil et du bouton
-          IconButton(
-            icon: FaIcon(
-              FontAwesomeIcons.circleUser,
-              size: 21.h,
-              color: Colors.black,
-            ),
-            onPressed: () {
-              // Ajoutez ici la logique de recherche
-            },
           ),
         ],
       ),
@@ -85,7 +119,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             SizedBox(
               //Mise en place du caroussel la taille du conteneur du caroussel
-              height: 180.h,
+              height: 200.h,
               child: PageView(
                 //Appelle de la class MyImageSlider pour afficher le caroussel pour le slider
                 controller: _pageController,
@@ -93,16 +127,16 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             //Espace entre le caroussel et le texte
-            SizedBox(height: 10.h),
+            SizedBox(height: 20.h),
             //Mise en page du texte derniers produits
             Padding(
-              padding: EdgeInsets.only(left: 7.w),
+              padding: EdgeInsets.only(left: 10.w),
               child: Text(
                 'Derniers produits',
                 style: GoogleFonts.oswald(
-                  fontSize: 18.w,
+                  fontSize: 20.sp,
                   fontWeight: FontWeight.w400,
-                  color: Colors.black,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
               ),
             ),
@@ -167,17 +201,18 @@ class _HomePageState extends State<HomePage> {
             ),
             SizedBox(height: 10.h),
             Container(
-              padding: EdgeInsets.only(left: 7.h),
+              padding: EdgeInsets.only(left: 10.h),
               child: Text(
                 'Smartphones',
                 style: GoogleFonts.oswald(
                   fontSize: 20.w,
                   fontWeight: FontWeight.w400,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
               ),
             ),
             //Fin du texte Smartphone
-            //Debut la grille iphone
+            //Debut la grille smartphone
             SizedBox(height: 10.h),
             Container(
               //MISE EN PLACE DE CONTENEUR de la grille
@@ -199,7 +234,7 @@ class _HomePageState extends State<HomePage> {
                         CatalogPhone(catalogItem: demoData3[index]),
               ),
             ),
-            //Fin de la grille iphone
+            //Fin de la grille smartphone
             SizedBox(height: 10.h),
             //Debut de la column de separation entre les grilles
             Stack(
@@ -236,18 +271,19 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: 10.h),
             //Debut du texte IPHONE
             Container(
-              padding: EdgeInsets.only(left: 7.w),
+              padding: EdgeInsets.only(left: 10.w),
               child: Text(
                 'Iphone',
                 style: GoogleFonts.oswald(
                   fontSize: 20.w,
                   fontWeight: FontWeight.w400,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
               ),
             ),
             //Fin du texte IPHONE
             SizedBox(height: 10.h),
-            //Debut de la grille pour les pc
+            //Debut de la grille pour les iphone
             Container(
               padding: EdgeInsets.symmetric(horizontal: 10.h, vertical: 5.w),
               child: GridView.builder(
@@ -303,19 +339,21 @@ class _HomePageState extends State<HomePage> {
             ),
             //Fin de la column de separation
             SizedBox(height: 10.h),
-            //Debut du texte IPHONE
+            //Debut du texte ordinateur
             Container(
-              padding: EdgeInsets.only(left: 7.w),
+              padding: EdgeInsets.only(left: 10.w),
               child: Text(
                 'Ordinateur',
                 style: GoogleFonts.oswald(
                   fontSize: 20.w,
                   fontWeight: FontWeight.w400,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
               ),
             ),
-            //Fin du texte IPHONE
+            //Fin texte ordinateur
             SizedBox(height: 10.h),
+            //Debut de la grille pour les pc
             Container(
               padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
               child: GridView.builder(

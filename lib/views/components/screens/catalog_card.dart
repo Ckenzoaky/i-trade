@@ -19,20 +19,29 @@ class CatalogCard extends StatelessWidget {
       //WIGHT CLIP POUR ARRONDIR LE CONTENEUR DE LA CARTE
       clipBehavior: Clip.antiAlias,
       child: GestureDetector(
-        onTap: () => Navigator.pushNamed(context, '/my_produit_profil',
-        arguments: Product(
+        onTap:
+            () => Navigator.pushNamed(
+              context,
+              '/my_produit_profil',
+              arguments: Product(
                 name: catalogItem.name,
                 image: catalogItem.image,
                 description: catalogItem.description,
                 detailsproduits: catalogItem.detailsproduits,
                 price: catalogItem.price,
-              ),),
+              ),
+            ),
         child: Container(
           //Mise en place des bordures du conteneur.
           decoration: BoxDecoration(
-            border: Border.all(color: Colors.grey.shade300, width: 2.w),
-            borderRadius: BorderRadius.circular(10.0.r),
-            color: Colors.grey.shade200,
+            //MISE EN PLACE DE LA COULEUR DES BORDURES ET LEUR EPAISSEUR
+            border: Border.all(
+              color: Theme.of(context).colorScheme.secondary,
+              width: 2.w,
+            ),
+            borderRadius: BorderRadius.circular(20.0.r),
+            //MISE EN PLACE DE LA COULEUR DU CONTENEUR DES PRODUITS
+            color: Theme.of(context).colorScheme.secondaryContainer,
           ),
           //MISE EN PLACE DE CONTENEUR
           padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
@@ -51,14 +60,15 @@ class CatalogCard extends StatelessWidget {
                   child: Image.asset(catalogItem.image, fit: BoxFit.cover),
                 ),
               ),
-              SizedBox(height: 2.h),
+              SizedBox(height: 3.h),
               //MISE EN PLACE DE CONTENEUR DU NOM DU VENDEUR
               //APPELLE DE LA CLASS IMAGE'CATALOGITEM.NAME'
               Text(
                 catalogItem.name,
-                style: GoogleFonts.lato(
-                  fontSize: 13.sp,
+                style: GoogleFonts.anton(
+                  fontSize: 14.sp,
                   fontWeight: FontWeight.w500,
+                  color: Theme.of(context).colorScheme.secondary,
                 ),
               ),
               SizedBox(height: 3.h),
@@ -78,9 +88,10 @@ class CatalogCard extends StatelessWidget {
               Text(
                 catalogItem.price,
                 style: GoogleFonts.openSans(
-                  fontSize: 15.w,
-                  fontWeight: FontWeight.w700,
-                  color: Colors.black,
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w500,
+                  color: Theme.of(context).colorScheme.secondary,
+                  letterSpacing: 1.5,
                 ),
               ),
             ],

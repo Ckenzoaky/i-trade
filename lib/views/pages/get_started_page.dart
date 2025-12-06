@@ -21,16 +21,17 @@ class _GetStartedPageState extends State<GetStartedPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFFFFFF),
+      backgroundColor: Color(0xffF5F6F9),
       appBar: AppBar(
         centerTitle: true,
         title: FadeAnimationDelayed(
           child: Text(
-            'I-Trade',
-            style: GoogleFonts.asap(
-              fontSize: 22.w,
-              fontWeight: FontWeight.w600,
+            'iTrade',
+            style: GoogleFonts.anton(
+              fontSize: 24.w,
+              fontWeight: FontWeight.w500,
               color: Colors.white,
+              letterSpacing: 1,
             ),
           ),
         ),

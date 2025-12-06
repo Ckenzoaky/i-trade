@@ -38,7 +38,7 @@ class Screen1 extends StatelessWidget {
         Container(
           padding: EdgeInsets.symmetric(horizontal: 10.w),
           child: Text(
-            "Decouvrez des appareils de haute qualite \nprets a etre echanges ou achetes  \nbesoins ",
+            "Decouvrez des appareils de haute qualité \nprêts à être échangés ou achetés  \nselon vos besoins ",
             textAlign: TextAlign.center,
             style: GoogleFonts.asap(
               fontSize: 14.w,

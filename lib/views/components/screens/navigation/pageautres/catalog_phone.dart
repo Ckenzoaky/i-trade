@@ -33,9 +33,9 @@ class CatalogAutres extends StatelessWidget {
             ),
         child: Container(
           decoration: BoxDecoration(
-            border: Border.all(color: Colors.grey.shade300, width: 2.w),
-            borderRadius: BorderRadius.circular(10.0),
-            color: Colors.grey.shade200,
+            border: Border.all(color: Theme.of(context).colorScheme.secondary, width: 2.w),
+            borderRadius: BorderRadius.circular(20.0.r),
+            color: Theme.of(context).colorScheme.secondaryContainer,
           ),
           //MISE EN PLACE DE CONTENEUR
           padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
@@ -50,18 +50,19 @@ class CatalogAutres extends StatelessWidget {
                 //APPELLE DE LA CLASS IMAGE'CATALOGITEM.IMAGE'
                 //CLIPRRECT POUR ARRONDIR L'IMAGE
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(10.0),
+                  borderRadius: BorderRadius.circular(10.0.r),
                   child: Image.asset(catalogItem.image, fit: BoxFit.cover),
                 ),
               ),
-              SizedBox(height: 2.h),
+              SizedBox(height: 3.h),
               //MISE EN PLACE DE CONTENEUR DU NOM DU VENDEUR
               //APPELLE DE LA CLASS IMAGE'CATALOGITEM.NAME'
               Text(
                 catalogItem.name,
-                style: GoogleFonts.lato(
-                  fontSize: 13.w,
+                style: GoogleFonts.anton(
+                  fontSize: 14.sp,
                   fontWeight: FontWeight.w500,
+                  color: Theme.of(context).colorScheme.secondary,
                 ),
               ),
               SizedBox(height: 3.h),
@@ -70,7 +71,7 @@ class CatalogAutres extends StatelessWidget {
               Text(
                 catalogItem.description,
                 style: GoogleFonts.lato(
-                  fontSize: 12.w,
+                  fontSize: 12.sp,
                   fontWeight: FontWeight.w900,
                 ),
               ),
@@ -80,10 +81,11 @@ class CatalogAutres extends StatelessWidget {
               //MISE EN PLACE DE GESTTION DE BOUTTON
               Text(
                 catalogItem.price,
-                style: GoogleFonts.openSans(
-                  fontSize: 15.w,
-                  fontWeight: FontWeight.w700,
-                  color: Colors.black,
+                style: GoogleFonts.anton(
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w500,
+                  color: Theme.of(context).colorScheme.secondary,
+                  letterSpacing: 1.5,
                 ),
               ),
             ],

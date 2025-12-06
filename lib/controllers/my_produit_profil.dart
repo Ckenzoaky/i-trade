@@ -33,7 +33,10 @@ class _MyProduitProfilState extends State<MyProduitProfil> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      backgroundColor: Color(0xffF5F6F9),
+      appBar: AppBar(
+        backgroundColor: Color(0xffF5F6F9),
+      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -102,7 +105,7 @@ class _MyProduitProfilState extends State<MyProduitProfil> {
                     children: [
                       MyElevatedButton(
                         text: 'Pas de troc',
-                        onTap: () => Navigator.pushNamed(context, ""),
+                        onTap: () => Navigator.pop(context),
                         onPressed: () {},
                       ),
                       //Espace entre les boutons

@@ -34,9 +34,12 @@ class CatalogHome extends StatelessWidget {
         child: Container(
           //Mise en place des bordures du conteneur.
           decoration: BoxDecoration(
-            border: Border.all(color: Colors.grey.shade300, width: 2.w),
-            borderRadius: BorderRadius.circular(10.0),
-            color: Colors.grey.shade200,
+            border: Border.all(
+              color: Theme.of(context).colorScheme.secondary,
+              width: 2.w,
+            ),
+            borderRadius: BorderRadius.circular(20.0),
+            color: Theme.of(context).colorScheme.secondaryContainer,
           ),
           //Mise en place du conteneur de la carte
           padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
@@ -55,14 +58,15 @@ class CatalogHome extends StatelessWidget {
                   child: Image.asset(catalogItem.image, fit: BoxFit.cover),
                 ),
               ),
-              SizedBox(height: 2.h),
+              SizedBox(height: 3.h),
               //MISE EN PLACE DE CONTENEUR DU NOM DU VENDEUR
               //APPELLE DE LA CLASS IMAGE'CATALOGITEM.NAME'
               Text(
                 catalogItem.name,
-                style: GoogleFonts.lato(
-                  fontSize: 13.sp,
+                style: GoogleFonts.anton(
+                  fontSize: 14.sp,
                   fontWeight: FontWeight.w500,
+                  color: Theme.of(context).colorScheme.secondary,
                 ),
               ),
               SizedBox(height: 3.h),
@@ -71,7 +75,7 @@ class CatalogHome extends StatelessWidget {
               Text(
                 catalogItem.description,
                 style: GoogleFonts.lato(
-                  fontSize: 11.sp,
+                  fontSize: 12.sp,
                   fontWeight: FontWeight.w900,
                 ),
               ),
@@ -81,10 +85,11 @@ class CatalogHome extends StatelessWidget {
               //MISE EN PLACE DE GESTTION DE BOUTTON
               Text(
                 catalogItem.price,
-                style: GoogleFonts.openSans(
-                  fontSize: 15.sp,
-                  fontWeight: FontWeight.w700,
-                  color: Colors.black,
+                style: GoogleFonts.anton(
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w500,
+                  color: Theme.of(context).colorScheme.secondary,
+                  letterSpacing: 1.5,
                 ),
               ),
             ],

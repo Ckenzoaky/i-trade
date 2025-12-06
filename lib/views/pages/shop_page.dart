@@ -10,26 +10,30 @@ class ShopPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //backgroundColor: Color(0xffF5F6F9),
       //BARRE DE NAVIGATION TOP
       appBar: AppBar(
+        actionsPadding: EdgeInsets.fromLTRB(0.w, 5.h, 0.w, 10.h),
         title: Text(
-          'I-Store',
-          style: GoogleFonts.asap(
-            fontSize: 22.w,
-            fontWeight: FontWeight.w700,
-            color: Colors.black,
+          'iStore',
+          style: GoogleFonts.anton(
+            fontSize: 24.sp,
+            fontWeight: FontWeight.w500,
+            color: Theme.of(context).colorScheme.primary,
           ),
         ),
-        backgroundColor: Colors.white,
+        //backgroundColor: Color(0xffF5F6F9),
         //CREATION DES BOUTONS DE NAVIGATION AU TOP
         //MISE EN PLACE DE CONTENEUR GENERAL
         actions: [
+          //CONTENEUR POUR LE BOUTON DE RECHERCHE
           Container(
+            margin: EdgeInsets.only(right: 10.w),
             height: 32.h,
             width: 36.w,
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.circular(50),
+              borderRadius: BorderRadius.circular(50.r),
               boxShadow: const [
                 BoxShadow(
                   color: Colors.black,
@@ -40,7 +44,7 @@ class ShopPage extends StatelessWidget {
             ),
             //PREMIER BOUTON DE RECHERCHE
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 0.1.w, vertical: 0.1.h),
+              margin: EdgeInsets.symmetric(horizontal: 0.5.w, vertical: 0.5.h),
               child: IconButton(
                 icon: Icon(Icons.search, color: Colors.black),
                 onPressed: () {
@@ -50,12 +54,6 @@ class ShopPage extends StatelessWidget {
             ),
           ),
           //DEUXIEME BOUTON FILTRE
-          IconButton(
-            icon: Icon(Icons.filter_list_alt, color: Colors.black),
-            onPressed: () {
-              // Ajoutez ici la logique de recherche
-            },
-          ),
         ],
       ),
       //CORPS DE CODE AVEC LE WIDGET GRIDVIEW POUR AFFICHER LES ELEMENTS DANS UNE GRILLE

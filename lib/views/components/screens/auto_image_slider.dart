@@ -16,11 +16,15 @@ class _MyImageSliderState extends State<MyImageSlider> {
     Image.asset("assets/images/casquehyperx.png", fit: BoxFit.cover),
     Image.asset("assets/images/Samsung-Galaxy-S24.png", fit: BoxFit.cover),
     Image.asset("assets/images/iphone15rpomax.png", fit: BoxFit.cover),
+    Image.asset("assets/images/redmi.png", fit: BoxFit.cover),
+    Image.asset("assets/images/montre_connecter.png", fit: BoxFit.cover),
   ];
 
   int myCurrentIndex1 = 0;
-  //  ClipRRect buildmyitems(int myCurrentIndex1) =>
-  //      ClipRRect(borderRadius: BorderRadius.circular(50));
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,6 +59,48 @@ class _MyImageSliderState extends State<MyImageSlider> {
                         ),
                       )
                       .toList(),
+            ),
+            // ajouter un espace entre le caroussel et les dots
+            // la taille de l'espace
+            SizedBox(height: 10.h),
+            // Indicateur de défilement (dots) — padding vertical et SafeArea
+            // mise en place des dots pour le caroussel
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 12.h),
+              // mise en place de la safe area pour eviter les problemes avec les differentes tailles d'ecran et pour les bords arrondis
+              child: SafeArea(
+                top: false,
+                bottom: true,
+                child: Center(
+                  // mise en place des dots avec animated container
+                  // row pour aligner les dots horizontalement
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
+                    // mise en place des dots avec la generation dynamique des dots selon le nombre d'items dans le caroussel
+                    children: List.generate(
+                      myitems.length,
+                      // animated container pour animer les dots
+                      (index) => AnimatedContainer(
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.easeInOut,
+                        //taille des dots
+                        height: 8.h,
+                        //longueur des dots
+                        width: myCurrentIndex1 == index ? 24.w : 8.w,
+                        margin: EdgeInsets.symmetric(horizontal: 4.w),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30.r),
+                          color:
+                              myCurrentIndex1 == index
+                                  ? Theme.of(context).colorScheme.primary
+                                  : Colors.grey.shade300,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ),
           ],
         ),
