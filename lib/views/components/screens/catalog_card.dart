@@ -39,7 +39,7 @@ class CatalogCard extends StatelessWidget {
               color: Theme.of(context).colorScheme.secondary,
               width: 2.w,
             ),
-            borderRadius: BorderRadius.circular(20.0.r),
+            borderRadius: BorderRadius.circular(10.0.r),
             //MISE EN PLACE DE LA COULEUR DU CONTENEUR DES PRODUITS
             color: Theme.of(context).colorScheme.secondaryContainer,
           ),
@@ -56,7 +56,7 @@ class CatalogCard extends StatelessWidget {
                 //APPELLE DE LA CLASS IMAGE'CATALOGITEM.IMAGE'
                 //CLIPRRECT POUR ARRONDIR L'IMAGE
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(10.0),
+                  borderRadius: BorderRadius.circular(20.r),
                   child: Image.asset(catalogItem.image, fit: BoxFit.cover),
                 ),
               ),
@@ -87,7 +87,7 @@ class CatalogCard extends StatelessWidget {
               //MISE EN PLACE DE GESTTION DE BOUTTON
               Text(
                 catalogItem.price,
-                style: GoogleFonts.openSans(
+                style: GoogleFonts.anton(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w500,
                   color: Theme.of(context).colorScheme.secondary,

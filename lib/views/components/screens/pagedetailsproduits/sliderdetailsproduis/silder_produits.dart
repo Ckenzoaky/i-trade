@@ -30,7 +30,7 @@ class _MyProduitSliderState extends State<MyProduitSlider> {
             CarouselSlider(
               options: CarouselOptions(
                 autoPlay: true,
-                height: 200.h,
+                height: 250.h,
                 autoPlayCurve: Curves.fastOutSlowIn,
                 autoPlayAnimationDuration: const Duration(seconds: 2),
                 autoPlayInterval: const Duration(seconds: 2),

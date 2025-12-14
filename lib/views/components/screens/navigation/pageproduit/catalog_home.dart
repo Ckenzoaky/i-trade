@@ -35,14 +35,14 @@ class CatalogHome extends StatelessWidget {
           //Mise en place des bordures du conteneur.
           decoration: BoxDecoration(
             border: Border.all(
-              color: Theme.of(context).colorScheme.secondary,
-              width: 2.w,
+              color: Theme.of(context).colorScheme.tertiaryContainer,
+              width: 3.w,
             ),
-            borderRadius: BorderRadius.circular(20.0),
+            borderRadius: BorderRadius.circular(10.r),
             color: Theme.of(context).colorScheme.secondaryContainer,
           ),
           //Mise en place du conteneur de la carte
-          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+          padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 5.h),
           //AFFICHER LES PRODUITS LE RATION DE L'IMAGE DANS LE CONTENEUR
           //SELON LE RATION DE L'IMAGE ZOOM OU NON
           child: Column(
@@ -58,38 +58,47 @@ class CatalogHome extends StatelessWidget {
                   child: Image.asset(catalogItem.image, fit: BoxFit.cover),
                 ),
               ),
-              SizedBox(height: 3.h),
+              SizedBox(height: 5.h),
               //MISE EN PLACE DE CONTENEUR DU NOM DU VENDEUR
               //APPELLE DE LA CLASS IMAGE'CATALOGITEM.NAME'
-              Text(
-                catalogItem.name,
-                style: GoogleFonts.anton(
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w500,
-                  color: Theme.of(context).colorScheme.secondary,
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 10.w),
+                child: Text(
+                  catalogItem.name,
+                  style: GoogleFonts.oswald(
+                    fontSize: 14.sp,
+                    //fontWeight: FontWeight.w400,
+                    color: Theme.of(context).colorScheme.secondary,
+                  ),
                 ),
               ),
               SizedBox(height: 3.h),
               //MISE EN PLACE DE CONTENEUR POUR LA DESCRIPTION DU PRODUITS
               //APPELLE DE LA CLASS IMAGE'CATALOGITEM.DESCRIPTION'
-              Text(
-                catalogItem.description,
-                style: GoogleFonts.lato(
-                  fontSize: 12.sp,
-                  fontWeight: FontWeight.w900,
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 10.w),
+                child: Text(
+                  catalogItem.description,
+                  style: GoogleFonts.lato(
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w900,
+                  ),
                 ),
               ),
-              SizedBox(height: 5.h),
+              SizedBox(height: 3.h),
               //MISE EN PLACE DE CONTENEUR DU BOUTTON POUR AFFICHER LE PRIX
               //APPELLE DE LA CLASS IMAGE'CATALOGITEM.PRICE'
               //MISE EN PLACE DE GESTTION DE BOUTTON
-              Text(
-                catalogItem.price,
-                style: GoogleFonts.anton(
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w500,
-                  color: Theme.of(context).colorScheme.secondary,
-                  letterSpacing: 1.5,
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 10.w),
+                child: Text(
+                  catalogItem.price,
+                  style: GoogleFonts.anton(
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w500,
+                    color: Theme.of(context).colorScheme.secondary,
+                    letterSpacing: 1.5,
+                  ),
                 ),
               ),
             ],

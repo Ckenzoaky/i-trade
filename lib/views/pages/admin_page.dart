@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:i_trade/views/components/screens/navigation/page_admin/add_product.dart';
+import 'package:i_trade/views/pages/home_page.dart';
 
 class AdminPage extends StatelessWidget {
   const AdminPage({super.key});
@@ -96,7 +98,11 @@ class AdminPage extends StatelessWidget {
                 // mise en place du bouton se connecter
                 ElevatedButton(
                   onPressed: () {
-                    // Action lors de la soumission du formulaire
+                    // Action à effectuer lors du clic sur le bouton
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AddProduct()),
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Theme.of(context).colorScheme.primary,
@@ -121,10 +127,13 @@ class AdminPage extends StatelessWidget {
                 SizedBox(height: 10.h),
                 TextButton(
                   onPressed: () {
-                    Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => HomePage()),
+                    );
                   },
                   child: Text(
-                    'Retour à la page principale',
+                    'Retour à la boutique',
                     style: GoogleFonts.anton(
                       fontSize: 18.sp,
                       fontWeight: FontWeight.w400,

@@ -24,10 +24,11 @@ class Screen2 extends StatelessWidget {
         //Mise en page du texte
         Text(
           "Trouvez votre bonheur!",
-          style: GoogleFonts.asap(
-            fontSize: 18.w,
-            fontWeight: FontWeight.w700,
-            color: Colors.deepPurple,
+          style: GoogleFonts.anton(
+            fontSize: 18.sp,
+            fontWeight: FontWeight.w500,
+            color: Theme.of(context).colorScheme.primary,
+            letterSpacing: 1.2,
           ),
         ),
         //Espace entre le texte et le paragraphe
@@ -36,11 +37,11 @@ class Screen2 extends StatelessWidget {
         Container(
           padding: EdgeInsets.symmetric(horizontal: 10.w),
           child: Text(
-            "Parcourez notre large selection d'appareils \nmis en troc ou en achat a moindre cout !",
+            "Parcourez notre large sélèction d'appareils \nmis en troc ou en achat à moindre cout. \nEt en quelques clics !",
             textAlign: TextAlign.center,
-            style: GoogleFonts.asap(
-              fontSize: 14.w,
-              fontWeight: FontWeight.w600,
+            style: GoogleFonts.roboto(
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w700,
               color: Colors.black54,
             ),
           ),

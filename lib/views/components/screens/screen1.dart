@@ -26,10 +26,11 @@ class Screen1 extends StatelessWidget {
         Text(
           "Explorez une large selection \nd'appareils",
           textAlign: TextAlign.center,
-          style: GoogleFonts.asap(
-            fontSize: 18.w,
-            fontWeight: FontWeight.w700,
-            color: Colors.deepPurple,
+          style: GoogleFonts.anton(
+            fontSize: 18.sp,
+            fontWeight: FontWeight.w500,
+            color: Theme.of(context).colorScheme.primary,
+            letterSpacing: 1.2,
           ),
         ),
         //Espace entre le texte et le paragraphe
@@ -40,9 +41,9 @@ class Screen1 extends StatelessWidget {
           child: Text(
             "Decouvrez des appareils de haute qualité \nprêts à être échangés ou achetés  \nselon vos besoins ",
             textAlign: TextAlign.center,
-            style: GoogleFonts.asap(
-              fontSize: 14.w,
-              fontWeight: FontWeight.w600,
+            style: GoogleFonts.roboto(
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w700,
               color: Colors.black54,
             ),
           ),

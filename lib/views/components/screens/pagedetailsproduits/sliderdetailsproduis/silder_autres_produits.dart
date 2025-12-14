@@ -18,7 +18,7 @@ class _AutresProduitSliderState extends State<AutresProduitSlider> {
 
   int myCurrentIndex1 = 0;
   //  ClipRRect buildmyitems(int myCurrentIndex1) =>
-  //      ClipRRect(borderRadius: BorderRadius.circular(50));
+  //  ClipRRect(borderRadius: BorderRadius.circular(50));
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,7 @@ class _AutresProduitSliderState extends State<AutresProduitSlider> {
                   myitems
                       .map(
                         (item) => ClipRRect(
-                          borderRadius: BorderRadius.circular(15.0),
+                          borderRadius: BorderRadius.circular(15.r),
                           child: Container(child: item),
                         ),
                       )

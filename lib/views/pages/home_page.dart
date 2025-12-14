@@ -39,6 +39,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       //Mise en place du conteneur des boutons et du appbar
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         actionsPadding: EdgeInsets.fromLTRB(0.w, 5.h, 0.w, 10.h),
         //Creation des boutons de navigation au top
         title: Padding(
@@ -52,7 +53,7 @@ class _HomePageState extends State<HomePage> {
             child: Text(
               'iTrade',
               style: GoogleFonts.anton(
-                fontSize: 24.w,
+                fontSize: 24.sp,
                 fontWeight: FontWeight.w500,
                 color: Theme.of(context).colorScheme.primary,
               ),
@@ -60,6 +61,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         //Ajout des boutons et mise en place des icones
+        //backgroundColor: Color(0xffF5F6F9),
         actions: [
           //Ajout de l'icone d'exclamation et du bouton
           Padding(

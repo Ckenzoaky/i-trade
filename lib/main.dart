@@ -4,6 +4,7 @@ import 'package:i_trade/controllers/callpage.dart';
 import 'package:i_trade/controllers/my_produit_profil.dart';
 import 'package:i_trade/controllers/scaffold_main.dart';
 import 'package:i_trade/controllers/whatsapppage.dart';
+import 'package:i_trade/views/components/screens/navigation/page_admin/add_product.dart';
 import 'package:i_trade/views/components/screens/pagedetailsproduits/detailsproduits/list_product_page.dart';
 import 'package:i_trade/views/pages/Admin_page.dart';
 import 'package:i_trade/views/pages/get_started_page.dart';
@@ -38,6 +39,7 @@ class MyApp extends StatelessWidget {
               seedColor: Colors.deepPurple,
               brightness: Brightness.light,
               secondary: Colors.black,
+              tertiaryContainer: Colors.grey,
               secondaryContainer: Colors.white,
               primary: Colors.deepPurple,
               tertiary: Colors.black12,
@@ -52,6 +54,7 @@ class MyApp extends StatelessWidget {
               brightness: Brightness.dark,
               primary: Colors.deepPurple,
               secondary: Colors.white,
+              tertiaryContainer: Colors.white,
               secondaryContainer: Colors.black,
               tertiary: Colors.grey.shade900,
             ),
@@ -71,6 +74,7 @@ class MyApp extends StatelessWidget {
             '/whatsapp_page': (context) => WhatsappPage(),
             '/call_page': (context) => CallPage(),
             '/admin_page': (context) => AdminPage(),
+            '/add_product': (context) => AddProduct(),
           },
         );
       },
