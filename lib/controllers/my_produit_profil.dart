@@ -34,9 +34,7 @@ class _MyProduitProfilState extends State<MyProduitProfil> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffF5F6F9),
-      appBar: AppBar(
-        backgroundColor: Color(0xffF5F6F9),
-      ),
+      appBar: AppBar(backgroundColor: Color(0xffF5F6F9)),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -188,7 +186,7 @@ class _MyProduitProfilState extends State<MyProduitProfil> {
             ),
             SizedBox(height: 20.h),
             SizedBox(
-              height: 170.h,
+              height: 200.h,
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
                 child: GridView.builder(
@@ -199,7 +197,7 @@ class _MyProduitProfilState extends State<MyProduitProfil> {
                     crossAxisCount: 1,
                     crossAxisSpacing: 15.w,
                     mainAxisSpacing: 15.h,
-                    childAspectRatio: 1.17.w,
+                    childAspectRatio: 1.5.w,
                   ),
                   // APPELLE DE LA CLASS CATALOGCARD POUR AFFICHER LES ELEMENTS DANS LA GRILLE
                   // POUR MODIFIER LES ELEMENTS DANS LA GRILLE, ON VA CHANGER LES PARAMETRES DANS DEMO_DATA, CATALOG_CARD ET MENU_ITEM
@@ -249,14 +247,16 @@ class _MyProduitProfilState extends State<MyProduitProfil> {
           ],
         ),
       ),
+      //la partie du bas avec les deux boutons
+      //le prix et appeler
       bottomNavigationBar: Container(
-        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 2.h),
         color: Colors.white,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Container(
-              margin: EdgeInsets.fromLTRB(0.h, 2.h, 5.h, 30.h),
+              margin: EdgeInsets.fromLTRB(0.h, 10.h, 5.h, 30.h),
               height: 40.h,
               width: 248.w,
               child: Flexible(
@@ -265,14 +265,18 @@ class _MyProduitProfilState extends State<MyProduitProfil> {
                       () => Navigator.pushNamed(context, '/whatsapp_page'),
                   //icon: Icon(Icons.bus),
                   label: Text(
-                    'Discuter : ${widget.product.price}',
-                    style: TextStyle(color: Colors.white, fontSize: 16.w),
+                    'Prix: ${widget.product.price}',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.green,
                     //padding: EdgeInsets.symmetric(vertical: 12),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(15.r),
                     ),
                   ),
                 ),
@@ -281,7 +285,7 @@ class _MyProduitProfilState extends State<MyProduitProfil> {
             //SizedBox(width: 1.w),
             Expanded(
               child: Container(
-                margin: EdgeInsets.fromLTRB(0.h, 2.h, 0.h, 30.h),
+                margin: EdgeInsets.fromLTRB(0.h, 10.h, 0.h, 30.h),
                 height: 40.h,
                 width: 200.w,
                 child: ElevatedButton(

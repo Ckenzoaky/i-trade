@@ -61,7 +61,6 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         //Ajout des boutons et mise en place des icones
-        //backgroundColor: Color(0xffF5F6F9),
         actions: [
           //Ajout de l'icone d'exclamation et du bouton
           Padding(

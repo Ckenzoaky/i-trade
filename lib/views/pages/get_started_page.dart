@@ -95,10 +95,11 @@ class _GetStartedPageState extends State<GetStartedPage> {
                           ),
                       child: Text(
                         buttonText,
-                        style: GoogleFonts.asap(
-                          fontSize: 16.w,
-                          fontWeight: FontWeight.w700,
+                        style: GoogleFonts.anton(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w500,
                           color: Colors.white,
+                          letterSpacing: 1.5,
                         ),
                       ),
                     ),

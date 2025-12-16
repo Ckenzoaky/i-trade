@@ -33,19 +33,22 @@ class CatalogAutres extends StatelessWidget {
             ),
         child: Container(
           decoration: BoxDecoration(
-            border: Border.all(color: Theme.of(context).colorScheme.secondary, width: 2.w),
-            borderRadius: BorderRadius.circular(20.0.r),
+            border: Border.all(
+              color: Theme.of(context).colorScheme.tertiaryContainer,
+              width: 2.w,
+            ),
+            borderRadius: BorderRadius.circular(10.0.r),
             color: Theme.of(context).colorScheme.secondaryContainer,
           ),
           //MISE EN PLACE DE CONTENEUR
-          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+          padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.h),
           //AFFICHER LES PRODUITS LE RATION DE L'IMAGE DANS LE CONTENEUR
           //SELON LE RATION DE L'IMAGE ZOOM OU NON
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               AspectRatio(
-                aspectRatio: 16 / 13,
+                aspectRatio: 14 / 13,
                 //MISE EN PLACE DE CONTENEUR DE L'IMAGE
                 //APPELLE DE LA CLASS IMAGE'CATALOGITEM.IMAGE'
                 //CLIPRRECT POUR ARRONDIR L'IMAGE
@@ -54,38 +57,48 @@ class CatalogAutres extends StatelessWidget {
                   child: Image.asset(catalogItem.image, fit: BoxFit.cover),
                 ),
               ),
-              SizedBox(height: 3.h),
+              SizedBox(height: 5.h),
               //MISE EN PLACE DE CONTENEUR DU NOM DU VENDEUR
               //APPELLE DE LA CLASS IMAGE'CATALOGITEM.NAME'
-              Text(
-                catalogItem.name,
-                style: GoogleFonts.anton(
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w500,
-                  color: Theme.of(context).colorScheme.secondary,
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 5.w),
+                child: Text(
+                  catalogItem.name,
+                  style: GoogleFonts.oswald(
+                    fontSize: 16.sp,
+                    //fontWeight: FontWeight.w500,
+                    color: Theme.of(context).colorScheme.secondary,
+                  ),
                 ),
               ),
-              SizedBox(height: 3.h),
+              SizedBox(height: 1.h),
               //MISE EN PLACE DE CONTENEUR POUR LA DESCRIPTION DU PRODUITS
               //APPELLE DE LA CLASS IMAGE'CATALOGITEM.DESCRIPTION'
-              Text(
-                catalogItem.description,
-                style: GoogleFonts.lato(
-                  fontSize: 12.sp,
-                  fontWeight: FontWeight.w900,
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 5.w),
+                child: Text(
+                  catalogItem.description,
+                  style: GoogleFonts.lato(
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w500,
+                    color: Theme.of(context).colorScheme.secondary,
+                  ),
                 ),
               ),
-              SizedBox(height: 5.h),
+              SizedBox(height: 1.h),
               //MISE EN PLACE DE CONTENEUR DU BOUTTON POUR AFFICHER LE PRIX
               //APPELLE DE LA CLASS IMAGE'CATALOGITEM.PRICE'
               //MISE EN PLACE DE GESTTION DE BOUTTON
-              Text(
-                catalogItem.price,
-                style: GoogleFonts.anton(
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w500,
-                  color: Theme.of(context).colorScheme.secondary,
-                  letterSpacing: 1.5,
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 5.w),
+                child: Text(
+                  catalogItem.price,
+                  style: GoogleFonts.anton(
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w500,
+                    color: Theme.of(context).colorScheme.secondary,
+                    letterSpacing: 1.5,
+                  ),
                 ),
               ),
             ],
