@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:i_trade/controllers/scaffold_main.dart';
 import 'package:i_trade/views/components/screens/navigation/page_admin/add_product.dart';
-import 'package:i_trade/views/pages/home_page.dart';
 
 class AdminPage extends StatelessWidget {
   const AdminPage({super.key});
@@ -129,7 +129,7 @@ class AdminPage extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => HomePage()),
+                      MaterialPageRoute(builder: (context) => ScaffoldMain()),
                     );
                   },
                   child: Text(

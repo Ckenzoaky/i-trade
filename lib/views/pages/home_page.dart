@@ -39,6 +39,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       //Mise en place du conteneur des boutons et du appbar
       appBar: AppBar(
+             // suppression du bouton de retour automatique
         automaticallyImplyLeading: false,
         actionsPadding: EdgeInsets.fromLTRB(0.w, 5.h, 0.w, 10.h),
         //Creation des boutons de navigation au top

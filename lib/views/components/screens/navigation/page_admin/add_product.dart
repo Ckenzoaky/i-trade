@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:i_trade/views/pages/admin_page.dart';
 
+
 class AddProduct extends StatefulWidget {
   const AddProduct({super.key});
 
