@@ -41,6 +41,7 @@ class CatalogAutres extends StatelessWidget {
             color: Theme.of(context).colorScheme.secondaryContainer,
           ),
           //MISE EN PLACE DE CONTENEUR
+          // gerer la taille de l'image dans le conteneur
           padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.h),
           //AFFICHER LES PRODUITS LE RATION DE L'IMAGE DANS LE CONTENEUR
           //SELON LE RATION DE L'IMAGE ZOOM OU NON
@@ -64,28 +65,28 @@ class CatalogAutres extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 5.w),
                 child: Text(
                   catalogItem.name,
-                  style: GoogleFonts.oswald(
-                    fontSize: 16.sp,
-                    //fontWeight: FontWeight.w500,
+                  style: GoogleFonts.rubik(
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w400,
                     color: Theme.of(context).colorScheme.secondary,
                   ),
                 ),
               ),
-              SizedBox(height: 1.h),
+              SizedBox(height: 5.h),
               //MISE EN PLACE DE CONTENEUR POUR LA DESCRIPTION DU PRODUITS
               //APPELLE DE LA CLASS IMAGE'CATALOGITEM.DESCRIPTION'
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 5.w),
                 child: Text(
                   catalogItem.description,
-                  style: GoogleFonts.lato(
-                    fontSize: 14.sp,
+                  style: GoogleFonts.notoSans(
+                    fontSize: 12.sp,
                     fontWeight: FontWeight.w500,
                     color: Theme.of(context).colorScheme.secondary,
                   ),
                 ),
               ),
-              SizedBox(height: 1.h),
+              SizedBox(height: 5.h),
               //MISE EN PLACE DE CONTENEUR DU BOUTTON POUR AFFICHER LE PRIX
               //APPELLE DE LA CLASS IMAGE'CATALOGITEM.PRICE'
               //MISE EN PLACE DE GESTTION DE BOUTTON
@@ -93,11 +94,10 @@ class CatalogAutres extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 5.w),
                 child: Text(
                   catalogItem.price,
-                  style: GoogleFonts.anton(
+                  style: GoogleFonts.notoSans(
                     fontSize: 14.sp,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w600,
                     color: Theme.of(context).colorScheme.secondary,
-                    letterSpacing: 1.5,
                   ),
                 ),
               ),

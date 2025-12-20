@@ -17,8 +17,8 @@ class MyElevatedButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 130.w,
-        height: 35.h,
+        width: 140.w,
+        height: 45.h,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: Colors.red.shade500,
@@ -26,9 +26,9 @@ class MyElevatedButton extends StatelessWidget {
         child: Center(
           child: Text(
             text,
-            style: GoogleFonts.lato(
-              fontSize: 14.w,
-              fontWeight: FontWeight.w900,
+            style: GoogleFonts.rubik(
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w500,
               color: Colors.white,
             ),
           ),

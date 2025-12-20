@@ -37,7 +37,7 @@ class _MyImageSliderState extends State<MyImageSlider> {
             CarouselSlider(
               options: CarouselOptions(
                 autoPlay: true,
-                height: height * 0.24,
+                height: height * 0.26,
                 autoPlayCurve: Curves.fastOutSlowIn,
                 autoPlayAnimationDuration: const Duration(seconds: 2),
                 autoPlayInterval: const Duration(seconds: 2),

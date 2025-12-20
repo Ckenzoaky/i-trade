@@ -46,7 +46,7 @@ class _AutresProduitSliderState extends State<AutresProduitSlider> {
                   myitems
                       .map(
                         (item) => ClipRRect(
-                          borderRadius: BorderRadius.circular(15.r),
+                          borderRadius: BorderRadius.circular(20.r),
                           child: Container(child: item),
                         ),
                       )

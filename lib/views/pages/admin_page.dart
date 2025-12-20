@@ -108,7 +108,7 @@ class AdminPage extends StatelessWidget {
                     backgroundColor: Theme.of(context).colorScheme.primary,
                     padding: EdgeInsets.symmetric(
                       horizontal: 110.w,
-                      vertical: 18.h,
+                      vertical: 14.h,
                     ),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.r),

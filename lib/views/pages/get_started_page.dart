@@ -26,12 +26,11 @@ class _GetStartedPageState extends State<GetStartedPage> {
         centerTitle: true,
         title: FadeAnimationDelayed(
           child: Text(
-            'iTrade',
-            style: GoogleFonts.anton(
-              fontSize: 24.w,
-              fontWeight: FontWeight.w500,
+            'iTrad',
+            style: GoogleFonts.rubik(
+              fontSize: 26.sp,
+              fontWeight: FontWeight.w600,
               color: Colors.white,
-              letterSpacing: 1,
             ),
           ),
         ),
@@ -95,11 +94,10 @@ class _GetStartedPageState extends State<GetStartedPage> {
                           ),
                       child: Text(
                         buttonText,
-                        style: GoogleFonts.anton(
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w500,
+                        style: GoogleFonts.rubik(
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w600,
                           color: Colors.white,
-                          letterSpacing: 1.5,
                         ),
                       ),
                     ),

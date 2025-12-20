@@ -24,11 +24,10 @@ class Screen2 extends StatelessWidget {
         //Mise en page du texte
         Text(
           "Trouvez votre bonheur!",
-          style: GoogleFonts.anton(
+          style: GoogleFonts.rubik(
             fontSize: 18.sp,
-            fontWeight: FontWeight.w500,
+            fontWeight: FontWeight.w600,
             color: Theme.of(context).colorScheme.primary,
-            letterSpacing: 1.2,
           ),
         ),
         //Espace entre le texte et le paragraphe
@@ -39,7 +38,7 @@ class Screen2 extends StatelessWidget {
           child: Text(
             "Parcourez notre large sélèction d'appareils \nmis en troc ou en achat à moindre cout. \nEt en quelques clics !",
             textAlign: TextAlign.center,
-            style: GoogleFonts.roboto(
+            style: GoogleFonts.notoSans(
               fontSize: 14.sp,
               fontWeight: FontWeight.w700,
               color: Colors.black54,

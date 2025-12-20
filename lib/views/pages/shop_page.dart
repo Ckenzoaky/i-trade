@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:i_trade/views/components/screens/catalog_card.dart';
-import 'package:i_trade/views/components/screens/demo_data.dart';
+import 'package:i_trade/views/components/screens/pageshop/catalog_card.dart';
+import 'package:i_trade/views/components/screens/pageshop/demo_data.dart';
 
 class ShopPage extends StatelessWidget {
   const ShopPage({super.key});
@@ -13,10 +13,11 @@ class ShopPage extends StatelessWidget {
       //backgroundColor: Color(0xffF5F6F9),
       //BARRE DE NAVIGATION TOP
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         actionsPadding: EdgeInsets.fromLTRB(0.w, 5.h, 0.w, 10.h),
         title: Text(
           'iStore',
-          style: GoogleFonts.anton(
+          style: GoogleFonts.rubik(
             fontSize: 24.sp,
             fontWeight: FontWeight.w500,
             color: Theme.of(context).colorScheme.primary,
@@ -64,7 +65,7 @@ class ShopPage extends StatelessWidget {
           crossAxisCount: 2,
           crossAxisSpacing: 15.w,
           mainAxisSpacing: 15.h,
-          childAspectRatio: 0.691.w,
+          childAspectRatio: 0.65.w,
         ),
         // APPELLE DE LA CLASS CATALOGCARD POUR AFFICHER LES ELEMENTS DANS LA GRILLE
         // POUR MODIFIER LES ELEMENTS DANS LA GRILLE, ON VA CHANGER LES PARAMETRES DANS DEMO_DATA, CATALOG_CARD ET MENU_ITEM

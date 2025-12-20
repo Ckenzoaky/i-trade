@@ -1,6 +1,6 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:i_trade/views/components/button/my_elevated_button.dart';
 import 'package:i_trade/views/components/screens/navigation/pageautres/catalog_phone.dart';
@@ -17,15 +17,32 @@ class MyProduitProfil extends StatefulWidget {
 
 class _MyProduitProfilState extends State<MyProduitProfil> {
   late PageController _pageController;
+  late Timer _timer;
+  int _currentPage = 0;
+  final int _pageCount = 3;
 
   @override
   void initState() {
     super.initState();
     _pageController = PageController(initialPage: 0);
+    // Autoplay: change de page toutes les 3 secondes
+    // timer pour que les images defile seules
+    _timer = Timer.periodic(const Duration(seconds: 3), (timer) {
+      if (!mounted) return;
+      _currentPage = (_currentPage + 1) % _pageCount;
+      _pageController.animateToPage(
+        _currentPage,
+        duration: const Duration(milliseconds: 700),
+        //styles animation de defilement
+        curve: Curves.fastOutSlowIn,
+      );
+    });
   }
 
+  // fonction pour faire defiler les images et afficher les images
   @override
   void dispose() {
+    _timer.cancel();
     _pageController.dispose();
     super.dispose();
   }
@@ -33,64 +50,75 @@ class _MyProduitProfilState extends State<MyProduitProfil> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffF5F6F9),
-      appBar: AppBar(backgroundColor: Color(0xffF5F6F9)),
+      appBar: AppBar(),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              height: 170.h,
-              child: PageView(
-                controller: _pageController,
-                children: [
-                  Image.asset(widget.product.image),
-                  Image.asset(widget.product.image),
-                  Image.asset(widget.product.image),
-                ],
+            // mise en place du conteneur pour l'affichage de l'image
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: SizedBox(
+                // taille des images
+                height: 300.h,
+                // cliprrect pour arrondir les bordes de l'image
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(15.r),
+                  child: PageView(
+                    controller: _pageController,
+                    children: [
+                      Image.asset(widget.product.image, fit: BoxFit.cover),
+                      Image.asset(widget.product.image, fit: BoxFit.cover),
+                      Image.asset(widget.product.image, fit: BoxFit.cover),
+                    ],
+                  ),
+                ),
               ),
             ),
-            SizedBox(height: 10.h),
-            //Mise en page du texte derniers produits
+            SizedBox(height: 5.h),
+            //mise en place des tailles du produit
             Row(
               children: [
                 Container(
-                  padding: EdgeInsets.only(left: 10.h),
+                  padding: EdgeInsets.only(left: 10.w),
                   child: Text(
+                    // nom de la boutique
                     widget.product.name,
-                    style: GoogleFonts.oswald(
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w400,
-                      color: Colors.black54,
+                    style: GoogleFonts.rubik(
+                      fontSize: 18.sp,
+                      //fontWeight: FontWeight.w400,
+                      color: Theme.of(context).colorScheme.secondary,
                     ),
                   ),
                 ),
-                SizedBox(width: 2.w),
+                SizedBox(width: 5.w),
+                // afffiche du logo shop
                 Container(
                   padding: EdgeInsets.only(top: 2.h),
                   child: Icon(
                     Icons.shopping_bag,
-                    color: Colors.black54,
-                    size: 12.w,
+                    color: Theme.of(context).colorScheme.secondary,
+                    size: 15.sp,
                   ),
                 ),
               ],
             ),
-            SizedBox(height: 5.h),
+            SizedBox(height: 25.h),
             //Mise en page du texte derniers produits
+            //  Mise en place de la partie description
             Padding(
               padding: EdgeInsets.only(left: 10.w),
               child: Text(
                 widget.product.description,
-                style: GoogleFonts.lato(
-                  fontSize: 17.sp,
-                  fontWeight: FontWeight.w800,
-                  color: Colors.black,
+                style: GoogleFonts.notoSans(
+                  fontSize: 24.sp,
+                  fontWeight: FontWeight.w400,
+                  color: Theme.of(context).colorScheme.secondary,
                 ),
               ),
             ),
             //Mise en page du texte derniers produits
-            SizedBox(height: 10.h),
+            SizedBox(height: 15.h),
             //Ajout des boutons
             Padding(
               padding: EdgeInsets.only(left: 10.w),
@@ -98,20 +126,22 @@ class _MyProduitProfilState extends State<MyProduitProfil> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   SizedBox(height: 10),
-                  // MISE EN PLACE DU BOUTON DE CONNEXION
+                  // Mise en place des boutons et couleur pour voir si c'est neuf ou trocable
                   Row(
                     children: [
+                      // bouton troc
                       MyElevatedButton(
                         text: 'Pas de troc',
-                        onTap: () => Navigator.pop(context),
+                        onTap: () {},
                         onPressed: () {},
                       ),
                       //Espace entre les boutons
                       SizedBox(width: 15.w),
                       //debut du dexieme bouton
+                      // bouton second main
                       MyElevatedButton(
                         text: 'Seconde main',
-                        onTap: () => Navigator.pushNamed(context, ''),
+                        onTap: () {},
                         onPressed: () {},
                       ),
                     ],
@@ -120,73 +150,68 @@ class _MyProduitProfilState extends State<MyProduitProfil> {
               ),
             ),
             //Espacement entre les boutons et les information du produits
-            SizedBox(height: 10.h),
+            SizedBox(height: 30.h),
+            Row(
+              children: [
+                Expanded(child: Divider(thickness: 1, color: Colors.grey)),
+              ],
+            ),
+            SizedBox(height: 20.h),
             //infomation sur le produit
             Padding(
               padding: EdgeInsets.only(left: 10.w),
               child: Text(
                 'Infomation sur le produit',
-                style: GoogleFonts.lato(
-                  fontSize: 16.w,
-                  fontWeight: FontWeight.w900,
-                  color: Colors.black,
+                style: GoogleFonts.rubik(
+                  fontSize: 20.sp,
+                  fontWeight: FontWeight.w500,
+                  color: Theme.of(context).colorScheme.secondary,
                 ),
               ),
             ),
             //Epacement entre le titre du produits et les information du produits
-            SizedBox(height: 2.h),
+            SizedBox(height: 15.h),
             //infomation sur le produit
             Padding(
               padding: EdgeInsets.only(left: 10.w),
               child: Text(
                 widget.product.detailsproduits,
-                style: GoogleFonts.oswald(
-                  fontSize: 14.w,
-                  fontWeight: FontWeight.w300,
-                  color: Colors.black54,
+                style: GoogleFonts.notoSans(
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w400,
+                  color: Theme.of(context).colorScheme.secondary,
                 ),
               ),
             ),
             //Espacement entre la le texte et la barre du bas
-            //debut du texte et les deux barres qui separe un texte
-            SizedBox(height: 5.h),
+            SizedBox(height: 30.h),
+            // ligne d'espacement horizontale
             Row(
               children: [
-                Expanded(child: Divider(thickness: 2, color: Colors.grey)),
-                Column(
-                  children: [
-                    IconButton(
-                      onPressed: () {},
-                      icon: FaIcon(FontAwesomeIcons.database),
-                    ),
-                    SizedBox(width: 10.w),
-                    Text(
-                      'Detail du produit',
-                      style: TextStyle(
-                        fontSize: 16.w,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
-                Expanded(child: Divider(thickness: 2, color: Colors.grey)),
+                Expanded(child: Divider(thickness: 1, color: Colors.grey)),
               ],
             ),
+            // fin de la ligne
+            // espacement entre la ligne et la suite du texte
             SizedBox(height: 20.h),
+            // mise en place de la partie pourrait vous interessez
             Padding(
               padding: EdgeInsets.only(left: 10.w),
               child: Text(
                 "Pourrait vous interesser",
-                style: TextStyle(
-                  fontSize: 17.w,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.black,
+                style: GoogleFonts.rubik(
+                  fontSize: 22.sp,
+                  fontWeight: FontWeight.w500,
+                  color: Theme.of(context).colorScheme.secondary,
                 ),
               ),
             ),
+            // espacement
             SizedBox(height: 20.h),
+            // mise en place du conteneur pour modifier les articles qui pourrait vous interesser
             SizedBox(
-              height: 200.h,
+              // taille du conteneur pour la partie pourrait vous interesser
+              height: 250.h,
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
                 child: GridView.builder(
@@ -215,7 +240,7 @@ class _MyProduitProfilState extends State<MyProduitProfil> {
                 Container(
                   //Mise en page de l'image et du texte sur l'image
                   width: double.infinity,
-                  height: 150.h,
+                  height: 180.h,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage('assets/images/phone1.png'),
@@ -233,10 +258,10 @@ class _MyProduitProfilState extends State<MyProduitProfil> {
                   alignment: Alignment.center,
                   child: Text(
                     'Decouvrez des deals en or !!!',
-                    style: GoogleFonts.oswald(
-                      fontSize: 25.w,
+                    style: GoogleFonts.rubik(
+                      fontSize: 25.sp,
                       fontWeight: FontWeight.w500,
-                      color: Colors.white,
+                      color: Theme.of(context).colorScheme.secondary,
                     ),
                   ),
                 ),
@@ -250,14 +275,14 @@ class _MyProduitProfilState extends State<MyProduitProfil> {
       //la partie du bas avec les deux boutons
       //le prix et appeler
       bottomNavigationBar: Container(
-        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 2.h),
-        color: Colors.white,
+        // mise en place pour le conteneur des boutons
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Container(
               margin: EdgeInsets.fromLTRB(0.h, 10.h, 5.h, 30.h),
-              height: 40.h,
+              height: 50.h,
               width: 248.w,
               child: Flexible(
                 child: ElevatedButton.icon(
@@ -265,18 +290,18 @@ class _MyProduitProfilState extends State<MyProduitProfil> {
                       () => Navigator.pushNamed(context, '/whatsapp_page'),
                   //icon: Icon(Icons.bus),
                   label: Text(
-                    'Prix: ${widget.product.price}',
-                    style: TextStyle(
+                    'Discuter: ${widget.product.price}',
+                    style: GoogleFonts.notoSans(
                       color: Colors.white,
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w500,
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.green,
                     //padding: EdgeInsets.symmetric(vertical: 12),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15.r),
+                      borderRadius: BorderRadius.circular(10.r),
                     ),
                   ),
                 ),
@@ -286,19 +311,19 @@ class _MyProduitProfilState extends State<MyProduitProfil> {
             Expanded(
               child: Container(
                 margin: EdgeInsets.fromLTRB(0.h, 10.h, 0.h, 30.h),
-                height: 40.h,
+                height: 50.h,
                 width: 200.w,
                 child: ElevatedButton(
                   onPressed: () => Navigator.pushNamed(context, '/call_page'),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.deepPurple,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(10.r),
                     ),
                     padding: EdgeInsets.zero,
                   ),
                   child: Center(
-                    child: Icon(Icons.call, color: Colors.white, size: 25.w),
+                    child: Icon(Icons.call, color: Colors.white, size: 25.sp),
                   ),
                   //padding: EdgeInsets.symmetric(vertical: 12),
                 ),

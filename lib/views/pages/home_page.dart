@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:i_trade/views/components/screens/auto_image_slider.dart';
 import 'package:i_trade/views/components/screens/navigation/pageiphone/catalog_phone.dart';
@@ -39,7 +38,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       //Mise en place du conteneur des boutons et du appbar
       appBar: AppBar(
-             // suppression du bouton de retour automatique
+        // suppression du bouton de retour automatique
         automaticallyImplyLeading: false,
         actionsPadding: EdgeInsets.fromLTRB(0.w, 5.h, 0.w, 10.h),
         //Creation des boutons de navigation au top
@@ -52,10 +51,10 @@ class _HomePageState extends State<HomePage> {
             },
             //mise en place du texte I-Trade
             child: Text(
-              'iTrade',
-              style: GoogleFonts.anton(
+              'iTrad',
+              style: GoogleFonts.rubik(
                 fontSize: 24.sp,
-                fontWeight: FontWeight.w500,
+                fontWeight: FontWeight.w600,
                 color: Theme.of(context).colorScheme.primary,
               ),
             ),
@@ -67,9 +66,9 @@ class _HomePageState extends State<HomePage> {
           Padding(
             padding: EdgeInsets.only(right: 5.w),
             child: IconButton(
-              icon: FaIcon(
-                FontAwesomeIcons.circleExclamation,
-                size: 22.h,
+              icon: Icon(
+                Icons.error_outline,
+                size: 26.h,
                 color: Theme.of(context).colorScheme.secondary,
               ),
               onPressed: () {
@@ -79,26 +78,26 @@ class _HomePageState extends State<HomePage> {
                   builder: (context) {
                     return Container(
                       width: double.infinity,
-                      height: 480.h,
+                      height: 440.h,
                       color: Colors.white,
-                      padding: EdgeInsets.only(top: 22.h, left: 15.w),
+                      padding: EdgeInsets.only(top: 20.h, left: 15.w),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             'Avis de non responsabilité :',
-                            style: GoogleFonts.anton(
+                            style: GoogleFonts.rubik(
                               fontSize: 16.sp,
-                              fontWeight: FontWeight.w400,
+                              fontWeight: FontWeight.w600,
                               color: Colors.red,
                             ),
                           ),
                           SizedBox(height: 25.h),
                           Text(
                             "iTrade agit en tant que plateforme de mise en \nrelation pour faciliter les échanges et les achats \nentre utilisateurs. \nNous ne garantissons pas la qualité, le bon \nfonctionnement ou l'authenticité des appareils \néchangés ou vendus sur la plateforme. \n\nIl est de la responsabilité de chaque utilisateur de \nvérifier soigneusement l'état des produits avant de \nconclure une transaction. \niTrade décline toute responsabilité en cas de \ndéfaillance, de dommage ou de dysfonctionnement \ndes appareils échangés ou achetés vie l'application. \n\nSoyez vigilant et n'hésitez pas à poser des \nquestions et à tester les appareils avant d'acheter \nou d'effectuer un échange.",
-                            style: GoogleFonts.oswald(
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.w400,
+                            style: GoogleFonts.notoSans(
+                              fontSize: 13.sp,
+                              fontWeight: FontWeight.w700,
                               color: Colors.black54,
                             ),
                           ),
@@ -121,7 +120,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             SizedBox(
               //Mise en place du caroussel la taille du conteneur du caroussel
-              height: 200.h,
+              height: 230.h,
               child: PageView(
                 //Appelle de la class MyImageSlider pour afficher le caroussel pour le slider
                 controller: _pageController,
@@ -135,16 +134,16 @@ class _HomePageState extends State<HomePage> {
               padding: EdgeInsets.only(left: 10.w),
               child: Text(
                 'Derniers produits',
-                style: GoogleFonts.oswald(
+                style: GoogleFonts.rubik(
                   fontSize: 20.sp,
-                  fontWeight: FontWeight.w400,
+                  fontWeight: FontWeight.w600,
                   color: Theme.of(context).colorScheme.primary,
                 ),
               ),
             ),
             //MISE EN PLACE DE LA GRILLE SMARTPHONE
             //DEBUT DE LA GRILLE
-            SizedBox(height: 10.h),
+            SizedBox(height: 15.h),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
               child: GridView.builder(
@@ -154,7 +153,7 @@ class _HomePageState extends State<HomePage> {
                   crossAxisCount: 2,
                   crossAxisSpacing: 15.w,
                   mainAxisSpacing: 15.h,
-                  childAspectRatio: 0.691.w,
+                  childAspectRatio: 0.65.w,
                 ),
                 // APPELLE DE LA CLASS CATALOGCARD POUR AFFICHER LES ELEMENTS DANS LA GRILLE
                 // POUR MODIFIER LES ELEMENTS DANS LA GRILLE, ON VA CHANGER LES PARAMETRES DANS DEMO_DATA, CATALOG_CARD ET MENU_ITEM
@@ -166,7 +165,7 @@ class _HomePageState extends State<HomePage> {
             ),
             //Fin de la grille smartphone
             //Debut de la column de separation entre la 2eme grille et la 3eme grille
-            SizedBox(height: 10.h),
+            SizedBox(height: 15.h),
             Stack(
               children: [
                 Container(
@@ -190,9 +189,9 @@ class _HomePageState extends State<HomePage> {
                   alignment: Alignment.center,
                   child: Text(
                     'Decouvrez des deals en or !!!',
-                    style: GoogleFonts.oswald(
-                      fontSize: 25.sp,
-                      fontWeight: FontWeight.w500,
+                    style: GoogleFonts.rubik(
+                      fontSize: 24.sp,
+                      fontWeight: FontWeight.w600,
                       color: Colors.white,
                     ),
                   ),
@@ -201,21 +200,21 @@ class _HomePageState extends State<HomePage> {
               //Fin de la column de separation
               //Debut du texte avant la grille
             ),
-            SizedBox(height: 10.h),
+            SizedBox(height: 15.h),
             Container(
               padding: EdgeInsets.only(left: 10.h),
               child: Text(
                 'Smartphones',
-                style: GoogleFonts.oswald(
+                style: GoogleFonts.rubik(
                   fontSize: 20.w,
-                  fontWeight: FontWeight.w400,
+                  fontWeight: FontWeight.w600,
                   color: Theme.of(context).colorScheme.primary,
                 ),
               ),
             ),
             //Fin du texte Smartphone
             //Debut la grille smartphone
-            SizedBox(height: 10.h),
+            SizedBox(height: 15.h),
             Container(
               //MISE EN PLACE DE CONTENEUR de la grille
               padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
@@ -226,7 +225,7 @@ class _HomePageState extends State<HomePage> {
                   crossAxisCount: 2,
                   crossAxisSpacing: 15.w,
                   mainAxisSpacing: 15.h,
-                  childAspectRatio: 0.691.w,
+                  childAspectRatio: 0.65.w,
                 ),
                 // APPELLE DE LA CLASS CATALOGCARD POUR AFFICHER LES ELEMENTS DANS LA GRILLE
                 // POUR MODIFIER LES ELEMENTS DANS LA GRILLE, ON VA CHANGER LES PARAMETRES DANS DEMO_DATA, CATALOG_CARD ET MENU_ITEM
@@ -237,7 +236,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             //Fin de la grille smartphone
-            SizedBox(height: 10.h),
+            SizedBox(height: 15.h),
             //Debut de la column de separation entre les grilles
             Stack(
               children: [
@@ -259,10 +258,10 @@ class _HomePageState extends State<HomePage> {
                   height: 180.h,
                   alignment: Alignment.center,
                   child: Text(
-                    "Du neuf, de l'occasion, du choix et \n              des economies !",
-                    style: GoogleFonts.oswald(
-                      fontSize: 25.w,
-                      fontWeight: FontWeight.w500,
+                    "Du neuf, de l'occasion, du \n choix et des economies!",
+                    style: GoogleFonts.rubik(
+                      fontSize: 24.sp,
+                      fontWeight: FontWeight.w600,
                       color: Colors.white,
                     ),
                   ),
@@ -270,21 +269,21 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             //Fin de la column de separation
-            SizedBox(height: 10.h),
+            SizedBox(height: 15.h),
             //Debut du texte IPHONE
             Container(
               padding: EdgeInsets.only(left: 10.w),
               child: Text(
                 'Iphone',
-                style: GoogleFonts.oswald(
-                  fontSize: 20.w,
-                  fontWeight: FontWeight.w400,
+                style: GoogleFonts.rubik(
+                  fontSize: 20.sp,
+                  fontWeight: FontWeight.w600,
                   color: Theme.of(context).colorScheme.primary,
                 ),
               ),
             ),
             //Fin du texte IPHONE
-            SizedBox(height: 10.h),
+            SizedBox(height: 15.h),
             //Debut de la grille pour les iphone
             Container(
               padding: EdgeInsets.symmetric(horizontal: 10.h, vertical: 5.w),
@@ -295,7 +294,7 @@ class _HomePageState extends State<HomePage> {
                   crossAxisCount: 2,
                   crossAxisSpacing: 15.w,
                   mainAxisSpacing: 15.h,
-                  childAspectRatio: 0.691.w,
+                  childAspectRatio: 0.65.w,
                 ),
                 // APPELLE DE LA CLASS CATALOGCARD POUR AFFICHER LES ELEMENTS DANS LA GRILLE
                 // POUR MODIFIER LES ELEMENTS DANS LA GRILLE, ON VA CHANGER LES PARAMETRES DANS DEMO_DATA, CATALOG_CARD ET MENU_ITEM
@@ -306,7 +305,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             //Fin de la grille
-            SizedBox(height: 10.h),
+            SizedBox(height: 15.h),
             //Debut de la column de separation
             Stack(
               children: [
@@ -329,10 +328,10 @@ class _HomePageState extends State<HomePage> {
                   height: 180.h,
                   alignment: Alignment.center,
                   child: Text(
-                    "Decouvrez des deals en or!!!",
-                    style: GoogleFonts.oswald(
-                      fontSize: 25.w,
-                      fontWeight: FontWeight.w500,
+                    "Decouvrez des machines \n  d'occasion à bon prix!",
+                    style: GoogleFonts.rubik(
+                      fontSize: 24.sp,
+                      fontWeight: FontWeight.w600,
                       color: Colors.white,
                     ),
                   ),
@@ -340,21 +339,21 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             //Fin de la column de separation
-            SizedBox(height: 10.h),
+            SizedBox(height: 15.h),
             //Debut du texte ordinateur
             Container(
               padding: EdgeInsets.only(left: 10.w),
               child: Text(
                 'Ordinateur',
-                style: GoogleFonts.oswald(
-                  fontSize: 20.w,
-                  fontWeight: FontWeight.w400,
+                style: GoogleFonts.rubik(
+                  fontSize: 20.sp,
+                  fontWeight: FontWeight.w600,
                   color: Theme.of(context).colorScheme.primary,
                 ),
               ),
             ),
             //Fin texte ordinateur
-            SizedBox(height: 10.h),
+            SizedBox(height: 15.h),
             //Debut de la grille pour les pc
             Container(
               padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
@@ -365,7 +364,7 @@ class _HomePageState extends State<HomePage> {
                   crossAxisCount: 2,
                   crossAxisSpacing: 15.w,
                   mainAxisSpacing: 15.h,
-                  childAspectRatio: 0.691.w,
+                  childAspectRatio: 0.65.w,
                 ),
                 // APPELLE DE LA CLASS CATALOGCARD POUR AFFICHER LES ELEMENTS DANS LA GRILLE
                 // POUR MODIFIER LES ELEMENTS DANS LA GRILLE, ON VA CHANGER LES PARAMETRES DANS DEMO_DATA, CATALOG_CARD ET MENU_ITEM
@@ -375,7 +374,7 @@ class _HomePageState extends State<HomePage> {
                         CatalogPc(catalogItem: demoData5[index]),
               ),
             ),
-            SizedBox(height: 10.h),
+            SizedBox(height: 15.h),
           ],
         ),
       ),

@@ -25,11 +25,10 @@ class Screen3 extends StatelessWidget {
         Text(
           "Une plateforme simple et \naccessible",
           textAlign: TextAlign.center,
-          style: GoogleFonts.anton(
+          style: GoogleFonts.rubik(
             fontSize: 18.sp,
-            fontWeight: FontWeight.w500,
+            fontWeight: FontWeight.w600,
             color: Theme.of(context).colorScheme.primary,
-            letterSpacing: 1.2,
           ),
         ),
         //Espace entre le texte et le paragraphe
@@ -40,7 +39,7 @@ class Screen3 extends StatelessWidget {
           child: Text(
             "Contactez facilement les vendeurs discutez \nou appelez directement via WhatsApp \npour finaliser l'affaire.",
             textAlign: TextAlign.center,
-            style: GoogleFonts.roboto(
+            style: GoogleFonts.notoSans(
               fontSize: 14.sp,
               fontWeight: FontWeight.w700,
               color: Colors.black54,
