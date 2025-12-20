@@ -14,3 +14,11 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+Application Flutter permettant de créer et gérer des listes d’envies. Le projet utilise une architecture MVC organisée avec un dossier core pour centraliser les ressources communes. Ce README intègre la documentation du projet, le guide de contribution, les templates de PR/Issues, et les conventions Git.
+
+🏗️ Architecture du projet
+L'application suit le pattern Model-View-Controller (MVC) enrichi par un dossier core pour l'injection des dépendances et la centralisation des utilitaires.
+
+1. Structure des dossiers
+lib/ ├── models/ # Structures de données (WishlistItem, User, JSON serialization) ├── views/ # UI : Pages, écrans, widgets (sans logique métier) ├── controllers/ # Logique métier : actions → modèles → services ├── services/ # API REST, base locale, fichiers, abstraction des données └── core/ # Contenu transversal ├── theme/ # Thèmes : couleurs, typographies ├── constants/ # Textes, URLs, clés statiques └── utils/ # Helpers, Formatters, Validators, Logger
