@@ -22,3 +22,48 @@ L'application suit le pattern Model-View-Controller (MVC) enrichi par un dossier
 
 1. Structure des dossiers
 lib/ ├── models/ # Structures de données (WishlistItem, User, JSON serialization) ├── views/ # UI : Pages, écrans, widgets (sans logique métier) ├── controllers/ # Logique métier : actions → modèles → services ├── services/ # API REST, base locale, fichiers, abstraction des données └── core/ # Contenu transversal ├── theme/ # Thèmes : couleurs, typographies ├── constants/ # Textes, URLs, clés statiques └── utils/ # Helpers, Formatters, Validators, Logger
+
+Structure détaillée
+models/
+
+Représentations des objets (WishlistItem, User…)
+
+Sérialisation JSON
+
+Structure de données stable
+
+views/
+
+Interfaces utilisateur (pages, widgets)
+
+Interaction avec les contrôleurs
+
+Aucun traitement métier
+
+controllers/
+
+Gèrent les états et les actions
+
+Manipulent les modèles
+
+Appellent les services
+
+Exposent des méthodes pour les vues
+
+services/
+
+Gestion des données
+
+Appels HTTP / APIs
+
+Local storage (Hive / SQLite)
+
+Stockage & cache
+
+core/
+
+Thème global
+
+Constantes générales
+
+Fonctions utilitaires
