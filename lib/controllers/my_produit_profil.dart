@@ -261,7 +261,7 @@ class _MyProduitProfilState extends State<MyProduitProfil> {
                     style: GoogleFonts.rubik(
                       fontSize: 25.sp,
                       fontWeight: FontWeight.w500,
-                      color: Theme.of(context).colorScheme.secondary,
+                      color: Colors.white,
                     ),
                   ),
                 ),
