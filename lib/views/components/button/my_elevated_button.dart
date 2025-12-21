@@ -5,11 +5,13 @@ import 'package:google_fonts/google_fonts.dart';
 class MyElevatedButton extends StatelessWidget {
   final String text;
   final VoidCallback onTap;
+  final Color? color;
   const MyElevatedButton({
     super.key,
     required this.text,
     required this.onTap,
     required Null Function() onPressed,
+    this.color,
   });
 
   @override
@@ -21,7 +23,7 @@ class MyElevatedButton extends StatelessWidget {
         height: 45.h,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: Colors.red.shade500,
+          color: color ?? Colors.red.shade500,
         ),
         child: Center(
           child: Text(

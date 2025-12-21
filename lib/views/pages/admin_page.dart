@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:i_trade/controllers/scaffold_main.dart';
-import 'package:i_trade/views/components/screens/navigation/page_admin/add_product.dart';
+import 'package:i_trade/views/components/screens/navigation/page_admin/espace_admi.dart';
 
 class AdminPage extends StatelessWidget {
   const AdminPage({super.key});
@@ -101,7 +101,7 @@ class AdminPage extends StatelessWidget {
                     // Action à effectuer lors du clic sur le bouton
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => AddProduct()),
+                      MaterialPageRoute(builder: (context) => MyEspaceAdmi()),
                     );
                   },
                   style: ElevatedButton.styleFrom(

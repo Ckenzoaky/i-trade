@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:i_trade/views/pages/admin_page.dart';
 
-
 class AddProduct extends StatefulWidget {
   const AddProduct({super.key});
 
@@ -36,17 +35,16 @@ class _AddProductState extends State<AddProduct> {
         //ici ajouter un produit
         title: Text(
           'Ajoutez un nouveau produit',
-          style: GoogleFonts.anton(
+          style: GoogleFonts.rubik(
             fontSize: 18.sp,
             fontWeight: FontWeight.w500,
             color: Theme.of(context).colorScheme.primary,
-            letterSpacing: 1.2,
           ),
         ),
       ),
       //mise en place du body de la page
       body: Container(
-        padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 10.h),
+        padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 5.h),
         child: Column(
           //mise en place pour ajouter le texte ajouter l'image du produit ici
           children: [
@@ -54,9 +52,9 @@ class _AddProductState extends State<AddProduct> {
               //texte affiché ajouter l'image du produit ici
               textAlign: TextAlign.center,
               "Ajoutez une image",
-              style: GoogleFonts.roboto(
-                fontSize: 18.sp,
-                fontWeight: FontWeight.w700,
+              style: GoogleFonts.notoSans(
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w600,
                 color: Theme.of(context).colorScheme.tertiaryContainer,
               ),
             ),
@@ -65,8 +63,8 @@ class _AddProductState extends State<AddProduct> {
             //container pour ajouter l'image du produit ici
             //ici on peut ajouter une image depuis la galerie ou prendre une photo
             Container(
-              height: 200.h,
-              width: 200.w,
+              height: 180.h,
+              width: 180.w,
               decoration: BoxDecoration(
                 color: Theme.of(context).colorScheme.tertiary,
                 borderRadius: BorderRadius.circular(20.r),
@@ -78,18 +76,21 @@ class _AddProductState extends State<AddProduct> {
               ),
             ),
             //separation entre le container et le texte ajouter le nom de la boutique
-            SizedBox(height: 15.h),
+            SizedBox(height: 10.h),
             Text(
               //texte affiché ajouter l'image du produit ici
               textAlign: TextAlign.center,
               "Ajoutez le nom de la boutique",
-              style: GoogleFonts.roboto(
-                fontSize: 18.sp,
-                fontWeight: FontWeight.w700,
+              style: GoogleFonts.notoSans(
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w600,
                 color: Theme.of(context).colorScheme.tertiaryContainer,
               ),
             ),
+            // espacement
             SizedBox(height: 10.h),
+            // espacement et debut du nouveau conteneur
+            //mise en place du conteneur de textfield
             Container(
               padding: EdgeInsets.symmetric(horizontal: 20.w),
               width: MediaQuery.of(context).size.width,
@@ -101,8 +102,8 @@ class _AddProductState extends State<AddProduct> {
                 decoration: InputDecoration(
                   border: InputBorder.none,
                   hintText: 'Nom de la boutique',
-                  hintStyle: GoogleFonts.oswald(
-                    fontSize: 18.sp,
+                  hintStyle: GoogleFonts.rubik(
+                    fontSize: 16.sp,
                     color: Theme.of(context).colorScheme.primary,
                     fontWeight: FontWeight.w500,
                   ),
