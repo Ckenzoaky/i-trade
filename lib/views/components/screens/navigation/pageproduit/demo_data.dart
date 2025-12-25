@@ -41,7 +41,7 @@ final List<MenuItemModel> demoDataDernierProduit = [
     detailsproduits: 'Iphone 13 pro ...',
     price: '250 000 FCFA',
     image: 'assets/images/tablette.png',
-    categorie :'Android',
+    categorie :'Autre',
   ),
   MenuItemModel(
     name: 'NAG shop',
@@ -49,6 +49,6 @@ final List<MenuItemModel> demoDataDernierProduit = [
     detailsproduits: 'Iphone 13 pro ...',
     price: '420 000 FCFA',
     image: 'assets/images/casquesteel.png',
-    categorie :'Accessoires',
+    categorie :'Casque',
   ),
 ];

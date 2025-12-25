@@ -158,9 +158,12 @@ class _BoutiqueState extends State<Boutique>
           dividerColor: Theme.of(context).colorScheme.secondary,
           // pour permettre de scroller vers la gauche ou la droite
           isScrollable: true,
+          //couleur pour l'indicateur
           indicatorColor: Theme.of(context).colorScheme.primary,
+          // taille de l'indicateur
           indicatorWeight: 5.sp,
           labelColor: Theme.of(context).colorScheme.primary,
+          // couleur pour les onglets non selectionné
           unselectedLabelColor: Theme.of(context).colorScheme.secondary,
           tabs: categories.map((cat) => Tab(text: cat)).toList(),
         ),
