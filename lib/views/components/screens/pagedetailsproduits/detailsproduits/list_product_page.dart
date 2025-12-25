@@ -4,11 +4,13 @@ class Product {
   final String detailsproduits;
   final String price;
   final String image;
+  final String categorie;
   Product({
     required this.name,
     required this.description,
     required this.detailsproduits,
     required this.price,
-    required this.image,
+    required this.image, 
+    required this.categorie,
   });
 }

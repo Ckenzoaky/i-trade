@@ -9,6 +9,7 @@ final List<MenuItemModel> demoData9 = [
     detailsproduits: 'Playstation 5 (PS4) Pro + 1 manette. \nVersion 12.00',
     price: '250 000 FCFA',
     image: 'assets/images/mi11proteaser.png',
+    categorie :'android',
   ),
   MenuItemModel(
     name: 'Guy store',
@@ -16,6 +17,7 @@ final List<MenuItemModel> demoData9 = [
     detailsproduits: 'Playstation 5 (PS4) Pro + 1 manette. \nVersion 12.00',
     price: '210 000 FCFA',
     image: 'assets/images/casquehyperx.png',
+    categorie :'Casque',
   ),
   MenuItemModel(
     name: 'NAG shop',
@@ -23,6 +25,7 @@ final List<MenuItemModel> demoData9 = [
     detailsproduits: 'Playstation 5 (PS4) Pro + 1 manette. \nVersion 12.00',
     price: '250 000 FCFA',
     image: 'assets/images/casquesteel.png',
+    categorie :'Accessoires',
   ),
   MenuItemModel(
     name: 'NAG shop',
@@ -30,6 +33,7 @@ final List<MenuItemModel> demoData9 = [
     detailsproduits: 'Playstation 5 (PS4) Pro + 1 manette. \nVersion 12.00',
     price: '250 000 FCFA',
     image: 'assets/images/setupgameur.png',
+    categorie :'Pc',
   ),
   MenuItemModel(
     name: 'Guy store',
@@ -37,6 +41,7 @@ final List<MenuItemModel> demoData9 = [
     detailsproduits: 'Playstation 5 (PS4) Pro + 1 manette. \nVersion 12.00',
     price: '210 000 FCFA',
     image: 'assets/images/casquehyperx.png',
+    categorie :'Accessoires',
   ),
     MenuItemModel(
     name: 'Guy store',
@@ -44,26 +49,6 @@ final List<MenuItemModel> demoData9 = [
     detailsproduits: 'Playstation 5 (PS4) Pro + 1 manette. \nVersion 12.00',
     price: '210 000 FCFA',
     image: 'assets/images/casquehyperx.png',
-  ),
-    MenuItemModel(
-    name: 'Guy store',
-    description: 'Casque...',
-    detailsproduits: 'Playstation 5 (PS4) Pro + 1 manette. \nersion 12.00',
-    price: '210 000 FCFA',
-    image: 'assets/images/casquehyperx.png',
-  ),
-    MenuItemModel(
-    name: 'Guy store',
-    description: 'Casque...',
-    detailsproduits: 'Playstation 5 (PS4) Pro + 1 manette. \nVersion 12.00',
-    price: '210 000 FCFA',
-    image: 'assets/images/casquehyperx.png',
-  ),
-    MenuItemModel(
-    name: 'Guy store',
-    description: 'Casque...',
-    detailsproduits: 'Playstation 5 (PS4) Pro + 1 manette. \nVersion 12.00',
-    price: '210 000 FCFA',
-    image: 'assets/images/casquehyperx.png',
+    categorie :'Accessoires',
   ),
 ];

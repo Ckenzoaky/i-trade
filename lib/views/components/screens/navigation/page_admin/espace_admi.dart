@@ -129,7 +129,7 @@ class _MyEspaceAdmiState extends State<MyEspaceAdmi> {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Theme.of(context).colorScheme.primary,
                     padding: EdgeInsets.symmetric(
-                      horizontal: 110.w,
+                      horizontal: 100.w,
                       vertical: 14.h,
                     ),
                     shape: RoundedRectangleBorder(

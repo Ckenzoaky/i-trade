@@ -6,16 +6,18 @@ final List<MenuItemModel> demoData = [
   MenuItemModel(
     name: 'NAG shop',
     description: 'Playstation 5 ...',
-    detailsproduits:'Playstation 5 (PS4) Pro + 1 manette. \nVersion 12.00 ...',
+    detailsproduits: 'Playstation 5 (PS4) Pro + 1 manette. \nVersion 12.00 ...',
     price: '350 000 FCFA',
     image: 'assets/images/playstation5.png',
+    categorie: 'Console',
   ),
   MenuItemModel(
     name: 'Guy store',
-    description: 'Samsung s24 ...',
+    description: 'Iphone 13 pro ...',
     detailsproduits: 'Iphone 13 pro ...',
     price: '210 000 FCFA',
     image: 'assets/images/samsung1.png',
+    categorie: 'Iphone',
   ),
   MenuItemModel(
     name: 'NAG shop',
@@ -23,6 +25,7 @@ final List<MenuItemModel> demoData = [
     detailsproduits: 'Iphone 13 pro ...',
     price: '250 000 FCFA',
     image: 'assets/images/xiaomi-12pro.png',
+    categorie: 'Android',
   ),
   MenuItemModel(
     name: 'NAG shop',
@@ -30,6 +33,7 @@ final List<MenuItemModel> demoData = [
     detailsproduits: 'Iphone 13 pro ...',
     price: '420 000 FCFA',
     image: 'assets/images/xiaomi-14.png',
+    categorie: 'Android',
   ),
   MenuItemModel(
     name: 'Guy store',
@@ -37,6 +41,7 @@ final List<MenuItemModel> demoData = [
     detailsproduits: 'Iphone 13 pro ...',
     price: '500 000 FCFA',
     image: 'assets/images/iphone15rpomax.png',
+    categorie: 'Iphone',
   ),
   MenuItemModel(
     name: 'Guy store',
@@ -44,6 +49,7 @@ final List<MenuItemModel> demoData = [
     detailsproduits: 'Iphone 13 pro ...',
     price: '30 000 FCFA',
     image: 'assets/images/tablette.png',
+    categorie: 'PC',
   ),
   MenuItemModel(
     name: 'Kenzo shop',
@@ -51,13 +57,23 @@ final List<MenuItemModel> demoData = [
     detailsproduits: 'Iphone 13 pro ...',
     price: '300 000 FCFA',
     image: 'assets/images/Google pixel 9.png',
+    categorie: 'Android',
   ),
   MenuItemModel(
-    name: 'Kenzo shop',
-    description: 'Tablette hybrid hp ...',
-    detailsproduits: 'Iphone 13 pro ...',
-    price: '270 000 FCFA',
-    image: 'assets/images/tablette.png',
+    name: 'NAG shop',
+    description: 'Setup Gameur...',
+    detailsproduits: 'Playstation 5 (PS4) Pro + 1 manette. \n Version 12.00',
+    price: '700 000 FCFA',
+    image: 'assets/images/setupgameur.png',
+    categorie: 'PC',
+  ),
+  MenuItemModel(
+    name: 'Guy store',
+    description: 'Ordinateur Hp...',
+    detailsproduits: 'Playstation 5 (PS4) Pro + 1 manette. \n Version 12.00',
+    price: '200 000 FCFA',
+    image: 'assets/images/ordinateurportable.png',
+    categorie: 'PC',
   ),
   MenuItemModel(
     name: 'Kenzo shop',
@@ -65,12 +81,6 @@ final List<MenuItemModel> demoData = [
     detailsproduits: 'Iphone 13 pro ...',
     price: '300 000 FCFA',
     image: 'assets/images/Google pixel 9.png',
-  ),
-  MenuItemModel(
-    name: 'Kenzo shop',
-    description: 'Tablette hybrid hp ...',
-    detailsproduits: 'Iphone 13 pro ...',
-    price: '270 000 FCFA',
-    image: 'assets/images/tablette.png',
+    categorie: 'Android',
   ),
 ];

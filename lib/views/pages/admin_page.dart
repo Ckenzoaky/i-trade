@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:i_trade/controllers/scaffold_main.dart';
 import 'package:i_trade/views/components/screens/navigation/page_admin/espace_admi.dart';
+import 'package:i_trade/views/pages/boutique.dart';
 
 class AdminPage extends StatelessWidget {
   const AdminPage({super.key});
@@ -96,6 +96,7 @@ class AdminPage extends StatelessWidget {
                 // espace entre le champ mot de passe et le bouton se connecter
                 SizedBox(height: 40.h),
                 // mise en place du bouton se connecter
+                //BOUTON DE CONNEXION
                 ElevatedButton(
                   onPressed: () {
                     // Action à effectuer lors du clic sur le bouton
@@ -104,10 +105,11 @@ class AdminPage extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => MyEspaceAdmi()),
                     );
                   },
+                  // MISE EN PLACE DU CONTENEUR DU BOUTON ET STYLE SE CONNECTER
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Theme.of(context).colorScheme.primary,
                     padding: EdgeInsets.symmetric(
-                      horizontal: 110.w,
+                      horizontal: 100.w,
                       vertical: 14.h,
                     ),
                     shape: RoundedRectangleBorder(
@@ -124,12 +126,13 @@ class AdminPage extends StatelessWidget {
                   ),
                 ),
                 // mise en place du bouton retour a la page principale
+                // MISE EN PLACE DU BOUTON ET STYLE RETOUR A LA BOUTIQUE
                 SizedBox(height: 10.h),
                 TextButton(
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => ScaffoldMain()),
+                      MaterialPageRoute(builder: (context) => Boutique()),
                     );
                   },
                   child: Text(

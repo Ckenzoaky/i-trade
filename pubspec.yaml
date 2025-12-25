@@ -44,6 +44,8 @@ dependencies:
   another_carousel_pro: ^1.0.2
   flutter_screenutil: ^5.9.3
   supabase_flutter: ^2.10.3
+  image_picker: ^1.2.1
+  storage_client: ^2.4.1
 
 dev_dependencies:
   flutter_test:

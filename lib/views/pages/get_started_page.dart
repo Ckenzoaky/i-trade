@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:i_trade/views/components/screens/screen1.dart';
 import 'package:i_trade/views/components/screens/screen2.dart';
 import 'package:i_trade/views/components/screens/screen3.dart';
+import 'package:i_trade/views/pages/home.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class GetStartedPage extends StatefulWidget {
@@ -87,11 +88,12 @@ class _GetStartedPageState extends State<GetStartedPage> {
                       borderRadius: BorderRadius.circular(15.r),
                     ),
                     child: GestureDetector(
-                      onTap:
-                          () => Navigator.pushReplacementNamed(
-                            context,
-                            '/scaffold_main',
-                          ),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Home()),
+                        );
+                      },
                       child: Text(
                         buttonText,
                         style: GoogleFonts.rubik(

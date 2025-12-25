@@ -3,10 +3,12 @@ class MenuItemModel {
   final String description;
   final String price;
   final String image;
-  MenuItemModel({
+  final String categorie;
+    MenuItemModel({
     required this.name,
     required this.description,
     required this.price,
     required this.image,
+    required this.categorie,
   });
 }

@@ -28,6 +28,7 @@ class CatalogPc extends StatelessWidget {
                 description: catalogItem.description,
                 detailsproduits: catalogItem.detailsproduits,
                 price: catalogItem.price,
+                categorie: catalogItem.categorie,
               ),
             ),
         child: Container(

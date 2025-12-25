@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:i_trade/controllers/callpage.dart';
 import 'package:i_trade/controllers/my_produit_profil.dart';
-import 'package:i_trade/controllers/scaffold_main.dart';
 import 'package:i_trade/controllers/whatsapppage.dart';
 import 'package:i_trade/views/components/screens/navigation/page_admin/add_product.dart';
 import 'package:i_trade/views/components/screens/pagedetailsproduits/detailsproduits/list_product_page.dart';
@@ -65,7 +64,6 @@ class MyApp extends StatelessWidget {
           //definition des routes
           // mise en place des routes pour la navigation entre les pages
           routes: {
-            '/scaffold_main': (context) => ScaffoldMain(),
             '/my_produit_profil': (context) {
               return MyProduitProfil(
                 product: ModalRoute.of(context)!.settings.arguments as Product,

@@ -11,6 +11,7 @@ class DemoListProduct extends StatelessWidget {
       detailsproduits: 'Playstation 5 (PS4) Pro + 1 manette. \n Version 12.00',
       image: 'assets/images/playstation5.png',
       price: '250 000 FCFA',
+      categorie: 'Console',
     ),
     Product(
       name: 'Produit 2',
@@ -18,6 +19,7 @@ class DemoListProduct extends StatelessWidget {
       detailsproduits: 'Playstation 5 (PS4) Pro + 1 manette. \n Version 12.00',
       image: 'Image du produit 2',
       price: 'Price du Produit 1',
+      categorie: 'Categorie',
     ),
   ];
   DemoListProduct({super.key});
