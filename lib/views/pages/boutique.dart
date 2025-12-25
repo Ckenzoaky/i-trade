@@ -154,11 +154,14 @@ class _BoutiqueState extends State<Boutique>
         bottom: TabBar(
           // controller pour naviger dynamiquement sur les onglets
           controller: _tabController,
+          // ligne de separation entre la grille et la tabbarre
+          dividerColor: Theme.of(context).colorScheme.secondary,
           // pour permettre de scroller vers la gauche ou la droite
           isScrollable: true,
           indicatorColor: Theme.of(context).colorScheme.primary,
+          indicatorWeight: 5.sp,
           labelColor: Theme.of(context).colorScheme.primary,
-          unselectedLabelColor: Colors.grey,
+          unselectedLabelColor: Theme.of(context).colorScheme.secondary,
           tabs: categories.map((cat) => Tab(text: cat)).toList(),
         ),
       ),
@@ -166,21 +169,27 @@ class _BoutiqueState extends State<Boutique>
       body:
           filteredItems.isEmpty
               ? const Center(child: Text("Aucun produit trouvé"))
-              : GridView(
-                //MISE EN PLACE DE LA GRILLE ET DES ELEMENTS
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 15.w,
-                  mainAxisSpacing: 15.h,
-                  childAspectRatio: 0.65.w,
+              : Padding(
+                padding: EdgeInsets.only(top: 20.h),
+                child: GridView(
+                  //MISE EN PLACE DE LA GRILLE ET DES ELEMENTS
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
+                    vertical: 5.h,
+                  ),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 15.w,
+                    mainAxisSpacing: 15.h,
+                    childAspectRatio: 0.65.w,
+                  ),
+                  // APPELLE DE LA CLASS CATALOGCARD POUR AFFICHER LES ELEMENTS DANS LA GRILLE
+                  // POUR MODIFIER LES ELEMENTS DANS LA GRILLE, ON VA CHANGER LES PARAMETRES DANS DEMO_DATA, CATALOG_CARD ET MENU_ITEM
+                  children:
+                      filteredItems
+                          .map((item) => CatalogCard(catalogItem: item))
+                          .toList(),
                 ),
-                // APPELLE DE LA CLASS CATALOGCARD POUR AFFICHER LES ELEMENTS DANS LA GRILLE
-                // POUR MODIFIER LES ELEMENTS DANS LA GRILLE, ON VA CHANGER LES PARAMETRES DANS DEMO_DATA, CATALOG_CARD ET MENU_ITEM
-                children:
-                    filteredItems
-                        .map((item) => CatalogCard(catalogItem: item))
-                        .toList(),
               ),
     );
   }
