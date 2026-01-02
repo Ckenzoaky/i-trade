@@ -33,7 +33,7 @@ class _BoutiqueState extends State<Boutique>
     "Console",
     "Casque",
     "Montre",
-    "Autres",
+    "Autre",
   ];
   // mise en place de la fonction void initState pour mettre a jour la page des nouveaux changement.
   @override

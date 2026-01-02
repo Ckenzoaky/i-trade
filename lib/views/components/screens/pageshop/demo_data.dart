@@ -53,9 +53,9 @@ final List<MenuItemModel> demoData = [
   ),
   MenuItemModel(
     name: 'Guy store',
-    description: 'Xiaomi A3 ...',
-    detailsproduits: 'Iphone 13 pro ...',
-    price: '30 000 FCFA',
+    description: 'Tablette PZ3 ...',
+    detailsproduits: 'Tablette new Generation ...',
+    price: '89 000 FCFA',
     image: 'assets/images/tablette.png',
     categorie: 'Autre',
   ),
