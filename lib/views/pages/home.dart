@@ -11,6 +11,7 @@ import 'package:i_trade/views/components/screens/navigation/pageandroid/demo_dat
 import 'package:i_trade/views/components/screens/navigation/pageproduit/catalog_home.dart';
 import 'package:i_trade/views/components/screens/navigation/pageproduit/demo_data.dart';
 import 'package:i_trade/views/pages/boutique.dart';
+import 'package:i_trade/views/pages/login_page.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -57,7 +58,10 @@ class _HomeState extends State<Home> {
           padding: EdgeInsets.only(left: 5.w),
           child: GestureDetector(
             onTap: () {
-              Navigator.pushNamed(context, '/admin_page');
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => MyLoginPage()),
+              );
               // Action lors du tap sur le titre
             },
             //mise en place du texte I-Trade

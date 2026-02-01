@@ -18,6 +18,7 @@ class Screen2 extends StatelessWidget {
           fit: BoxFit.cover,
           height: 320.h,
           width: 360.w,
+          // cache des images pour optimiser le rendu
         ),
         //Espace entre l'image et le texte
         SizedBox(height: 10.h),

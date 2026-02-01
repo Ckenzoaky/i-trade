@@ -4,12 +4,14 @@ import 'package:i_trade/controllers/callpage.dart';
 import 'package:i_trade/controllers/my_produit_profil.dart';
 import 'package:i_trade/controllers/whatsapppage.dart';
 import 'package:i_trade/views/components/screens/navigation/page_admin/add_product.dart';
+import 'package:i_trade/views/components/screens/navigation/page_product_edit/list_product_page.dart';
+import 'package:i_trade/views/components/screens/navigation/page_product_edit/my_produit_profil.dart';
 import 'package:i_trade/views/components/screens/pagedetailsproduits/detailsproduits/list_product_page.dart';
-import 'package:i_trade/views/pages/Admin_page.dart';
 import 'package:i_trade/views/pages/get_started_page.dart';
+import 'package:i_trade/views/pages/login_page.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-void main() /*pour mettre supabase*/ async {
+Future<void> main() /*pour mettre supabase*/ async {
   // fonction main async pour initialiser supabase
   WidgetsFlutterBinding.ensureInitialized();
   await Supabase.initialize(
@@ -69,9 +71,14 @@ class MyApp extends StatelessWidget {
                 product: ModalRoute.of(context)!.settings.arguments as Product,
               );
             },
+            '/my_produit_edit': (context) {
+              return MyProduitEdit(
+                article: ModalRoute.of(context)!.settings.arguments as Article,
+              );
+            },
             '/whatsapp_page': (context) => WhatsappPage(),
             '/call_page': (context) => CallPage(),
-            '/admin_page': (context) => AdminPage(),
+            '/login_page': (context) => MyLoginPage(),
             '/add_product': (context) => AddProduct(),
           },
         );

@@ -7,7 +7,6 @@ class Screen1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //final size = MediaQuery.of(context).size;
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -16,9 +15,11 @@ class Screen1 extends StatelessWidget {
         //Mise en page de l'image et les modifications
         Image.asset(
           "assets/images/image1.png",
+          // mise en place du boxfit cover pour l'image et des dimensions
           fit: BoxFit.cover,
           height: 320.h,
           width: 360.w,
+          // cache des images pour optimiser le rendu
         ),
         //Espace entre l'image et le texte
         SizedBox(height: 10.h),

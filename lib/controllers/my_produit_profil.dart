@@ -96,9 +96,9 @@ class _MyProduitProfilState extends State<MyProduitProfil> {
                 Container(
                   padding: EdgeInsets.only(top: 2.h),
                   child: Icon(
-                    Icons.shopping_bag,
+                    Icons.storefront_outlined,
                     color: Theme.of(context).colorScheme.secondary,
-                    size: 15.sp,
+                    size: 16.sp,
                   ),
                 ),
               ],
